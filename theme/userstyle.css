@@ -1,0 +1,107 @@
+/**************************************************************************************************
+ *  VARIABLES
+ *************************************************************************************************/
+
+html {
+  --primary: rgb(45, 107, 220);
+  --icon-color: rgb(115, 133, 152);
+  --bg-dark: rgb(49, 54, 64);
+  --bg-light: rgb(244, 245, 246);
+  --bg-content: rgb(255, 255, 255);
+  --border-color: rgb(221, 221, 221);
+  --font-dark: rgb(50, 55, 63);
+  --font-light: rgb(255, 255, 255);
+
+  /* set to none if no borders shall be shown (used for headlines here) */
+  --border: 1px solid var(--border-color);
+
+  /* change to get the rounded edges for inputs, buttons and selects back */
+  --dialog-radius: 0;
+  --scroll-radius: 0;
+
+  /* set to none if no shadow shall be shown below the floating toc */
+  --shadow: 0px 4px 4px -4px rgba(0, 0, 0, 0.1);
+}
+
+/**************************************************************************************************
+ *  GLOBALS
+ *************************************************************************************************/
+
+body {
+  font-family: Roboto;
+  line-height: 1.2em !important;
+}
+
+/* scrollbars */
+::-webkit-scrollbar-thumb {
+  border-radius: var(--scroll-radius) !important;
+}
+
+/**************************************************************************************************
+ *  CONTENT
+ *************************************************************************************************/
+
+/* horizontal rule */
+hr {
+  border-bottom: var(--border) !important;
+}
+
+/* strikethrough checked task list items (https://discourse.joplinapp.org/t/share-your-css/1730/189) */
+li.md-checkbox input[type="checkbox"]:checked + label {
+  text-decoration: line-through var(--font-dark);
+}
+
+/**************************************************************************************************
+ *  TABLE OF CONTENTS
+ *  Based on the idea from here: https://discourse.joplinapp.org/t/toc-as-the-sidebar/5979/34
+ *************************************************************************************************/
+
+nav.table-of-contents > ul {
+  background: none;
+  font-size: small;
+  height: 95%;
+  overflow: hidden;
+  padding: 2px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 10px;
+  z-index: 99;
+}
+nav.table-of-contents > ul:hover {
+  margin-right: 10px;
+  background-color: var(--bg-light);
+  border-radius: var(--dialog-radius);
+  border: var(--border);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  overflow: scroll;
+  width: auto;
+}
+nav.table-of-contents > ul:hover::before {
+  content: "TABLE OF CONTENTS";
+}
+nav.table-of-contents > ul:hover li {
+  display: list-item;
+}
+nav.table-of-contents ul {
+  list-style-type: none;
+  margin-left: 8px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+nav.table-of-contents li {
+  display: none;
+  line-height: 1.5em;
+  margin-bottom: 0;
+  white-space: nowrap;
+}
+nav.table-of-contents li a {
+  padding: 5px;
+}
+nav.table-of-contents ul li ul li {
+  border-left: 1px solid var(--border-color) !important;
+}
+nav.table-of-contents a {
+  text-decoration: none !important;
+}
