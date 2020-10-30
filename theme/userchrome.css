@@ -464,32 +464,40 @@ a[title="Set alarm"] {
   /* width: 100% !important; */
   /* z-index: 10 !important; */
 }
-.rli-editor > div > div > div[style*="align-items: center;"] div {
-  border-top: none !important;
-}
 
-/* todo: floating local search */
+/* floating local search */
+/* todo: icons hell */
+/* todo: info text hell ohne bg */
+/* todo: gleicher stil für dialoge  */
 .rli-editor
   > div
   > div
   > div[style$="align-items: center;"]:not(:empty):not(:first-of-type) {
-  position: absolute;
-  background: rgba(100, 100, 100, 0.9);
-  bottom: 70px;
-  border-radius: var(--dialog-radius);
-  padding: 0 2px !important;
   border: none !important;
-  width: fit-content !important;
-  z-index: 100 !important;
-  right: 10px;
+  z-index: 10 !important;
+  height: 0;
+  position: relative;
+  bottom: 10px;
 }
 .rli-editor
   > div
   > div
   > div[style$="align-items: center;"]:not(:empty):not(:first-of-type)
-  input {
-  /* border:1px solid rgba(0, 0, 0, 0.1) !important; */
+  > div {
+  border: none !important;
+  background: rgba(60, 65, 70, 0.95);
+  border-radius: var(--dialog-radius);
+  position: relative;
+  bottom: 15px;
+  padding: 0 2px !important;
 }
+/* .rli-editor
+  > div
+  > div
+  > div[style$="align-items: center;"]:not(:empty):not(:first-of-type)
+  input {
+  border:1px solid rgba(0, 0, 0, 0.1) !important;
+} */
 .fas.fa-times,
 .fas.fa-chevron-up,
 .fas.fa-chevron-down {
