@@ -16,13 +16,14 @@ html {
   /* TODO remove - replace with --dark-grey */
   --border-color: rgb(221, 221, 221);
 
-  --icons: rgb(115, 133, 152);
+  /* --icons: rgb(115, 133, 152); */
+  --icons: rgba(0, 0, 0, 0.5);
 
   /* TWEAK: Set to none if no borders shall be shown (not tested) */
   --border: 1px solid var(--dark-grey);
 
   /* TWEAK: Change to get the rounded corners for inputs, buttons and selects back (e.g. "3px") */
-  --button-radius: 3px;
+  --button-radius: 5px;
   --dialog-radius: 10px;
   --input-radius: 10px;
   --scroll-radius: 3px;
@@ -46,7 +47,7 @@ i.icon-notes {
 
 /* TWEAK: Show/hide "last changed" timestamp next to the note title */
 .rli-editor > div > div > div > input + span {
-  display: none !important;
+  /* todo: display: none !important; */
 }
 
 /* TWEAK: Show/hide editor toolbar (not in WYSIWYG editor mode and also not the toolbar next to the note title) */
@@ -56,11 +57,16 @@ i.icon-notes {
 
 /* TWEAK: Show/hide toggle editors button */
 button[aria-label="Toggle editors"] {
-  display: none !important;
+  /* todo: display: none !important; */
 }
 
 /* TWEAK: Show/hide "click to add tags..." (if note already has tags) */
 .tag-list + span {
+  /* todo: display: none !important; */
+}
+
+/* TWEAK: Show/hide new folder button */
+.side-bar > div > div > button {
   display: none !important;
 }
 
@@ -77,8 +83,9 @@ button[title="New note"] {
 /* user inputs */
 input,
 select {
-  /* background-color: var(--overlay) !important; */
+  /* background-color: rgba(255, 255, 255, 0.5) !important; */
   border-radius: var(--input-radius) !important;
+  /* todo: nur input von global/local search ohne border - sonst auch in dialogs überschrieben */
   border: none !important;
   font-family: Roboto !important;
   padding: 3px 8px !important;
@@ -91,7 +98,8 @@ select:hover {
 }
 input:focus,
 select:focus {
-  border: 1px solid rgba(0, 0, 0, 0.3) !important;
+  /* background-color: rgba(255, 255, 255, 0.1) !important; */
+  /* border: 1px solid rgba(0, 0, 0, 0.1) !important; */
 }
 .tox .tox-dialog input {
   background-color: var(--white) !important;
@@ -162,7 +170,7 @@ td {
 
 /* scrollbars */
 ::-webkit-scrollbar-thumb {
-  /* todo: hintergrund auch dynamisch */
+  background-color: rgba(0, 0, 0, 0.1) !important;
   border-radius: var(--scroll-radius) !important;
 }
 
@@ -204,59 +212,65 @@ td {
 .side-bar .list-item-container:hover {
   background-color: rgba(0, 0, 0, 0.1) !important;
 }
-/* current active entry - workaround */
-.side-bar .jrWaSt.list-item-container {
+/* todo: current active entry - workaround */
+/* .side-bar .jrWaSt.list-item-container {
+  background-color: rgba(0, 0, 0, 0.2) !important;
+} */
+
+/* synchronize area */
+.side-bar > div:last-of-type {
   background-color: rgba(0, 0, 0, 0.2) !important;
 }
 
-/* synchronize area + button */
-.side-bar > div:last-of-type {
-  background-color: rgba(0, 0, 0, 0.1) !important;
-}
+/* synchronize button */
 .side-bar > div:last-of-type > button {
   background-color: rgba(0, 0, 0, 0.2) !important;
   border: none !important;
-  /* opacity: 0.8 !important; */
 }
 .side-bar > div:last-of-type > button:hover {
   background-color: rgba(255, 255, 255, 0.1) !important;
-  /* border: 1px solid rgba(255,255,255, 0.1) !important; */
 }
 .side-bar > div:last-of-type > button span {
   color: rgba(255, 255, 255, 0.5) !important;
-  /* color: var(--dark) !important; */
 }
-.side-bar > div:last-of-type > button:hover span {
-  color: rgba(0, 0, 0, 0.5) !important;
-}
+/* .side-bar > div:last-of-type > button:hover span {
+  color: rgba(0, 0, 0, 0.7) !important;
+} */
 
 /**************************************************************************************************
  *  NOTE LIST
  *************************************************************************************************/
 
-/* note list controls (global search, etc.) */
-.rli-noteListControls {
-  /* border-bottom: var(--border) !important; */
-  /* TWEAK: Enable the following lines to show shadow also below global search */
-  /* box-shadow: var(--shadow-bottom) !important;
-  z-index: 20 !important; */
+/* search icon */
+.rli-noteListControls > div > div:first-of-type button span {
+  color: var(--icons) !important;
 }
 
-.rli-noteListControls button {
-  /* button[title="New to-do"],
-  button[title="New note"] { */
-  background: none !important;
-  /* background-color: var(-); */
-  /* display: none !important; */
+/* todo: floating plus button
+ * - eigentliche buttons werden nur bei hoover über plus button angezeigt (wie bei apps)
+ * - div ist wie button 35x35, buttons normal invisble
+ * - bei hoover werden buttons angezeigt
+ */
+
+/* floating new buttons */
+.rli-noteListControls > div > div:nth-child(2) {
+  /* border-radius: var(--dialog-radius); */
+  bottom: 10px;
+  position: fixed;
+  z-index: 10;
 }
-.rli-noteListControls > div > div > button:hover {
+.rli-noteListControls > div > div:nth-child(2) button {
+  border-radius: 200px !important;
+  margin-right: 0 10px 0 0 !important;
+  min-height: 35px !important;
+  min-width: 35px !important;
+}
+/* .rli-noteListControls > div > div:nth-child(2) > button:hover {
   background-color: rgba(0, 0, 0, 0.1) !important;
-}
-
-/* icon buttons */
-.rli-noteListControls button span,
-.editor-toolbar span {
-  color: rgba(0, 0, 0, 0.5) !important;
+} */
+.rli-noteListControls > div > div:nth-child(2) button span {
+  /* color: var(--icons) !important; */
+  font-size: 20px !important;
 }
 
 /* note list */
@@ -265,35 +279,56 @@ td {
   border-right: none !important;
 }
 
-/* note list entries */
-.note-list .list-item-container {
+/* note list entries - variante 1 */
+/* TODO überschreibt drag&drop marker */
+/* .note-list .list-item-container {
   margin: 0 auto !important;
-  /* TODO: var auslagern */
   border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
   width: auto !important;
   margin: 0 10px !important;
 }
+.note-list .list-item-container a,
+.note-list .list-item-container div {
+  padding: 0 !important;
+}
 .note-list .list-item-container::before {
-  /* TODO überschreibt die border beim drag&drop - geht dann wohl auch nicht mehr */
-  /* evtl. border color einfach none */
   border: none !important;
 }
-.note-list > div:nth-last-of-type(2) {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+.note-list > div:last-of-type {
+  border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
+  margin: 0 10px;
 }
-.rli-noteList .list-item-container:hover {
+.note-list .list-item-container:hover {
   background-color: rgba(0, 0, 0, 0.1) !important;
 }
-.rli-noteList .list-item-container > a,
-.rli-noteList .list-item-container > div {
-  padding: 0 5px !important;
+.note-list .list-item-container > a,
+.note-list .list-item-container > div {
+  padding: 0 3px !important;
+} */
+
+/* note list entries - variante 2 */
+.rli-noteListControls > div,
+.note-list .list-item-container::before {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+.note-list .list-item-container {
+  padding: 0 10px !important;
+}
+.note-list .list-item-container a,
+.note-list .list-item-container div {
+  padding: 0 !important;
+}
+.note-list .list-item-container:hover {
+  background-color: rgba(0, 0, 0, 0.1) !important;
 }
 
-.rli-noteList .list-item-container > a > span {
+.note-list .list-item-container > a > span {
   /* adds "..." to notes with long titles */
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+/* todo: empty note list comment ohne bg */
 
 /**************************************************************************************************
  *  PLUGIN PANEL
@@ -310,24 +345,24 @@ td {
 
 /* editor column */
 .rli-editor > div {
-  padding: 10px !important;
+  /* padding: 5px 10px 0 10px !important; */
+  padding: 0 10px !important;
   width: 100% !important;
 }
 
-/* empty notebook or no note selected */
-/* TODO: check empty, multiple selected */
+/* empty notebook */
 .rli-editor > div:empty {
-  background-color: var(--grey) !important;
-  opacity: 1 !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  /* opacity: 1 !important; */
 }
 
 /* note title bar */
 .rli-editor > div > div > div:first-of-type {
   /* background-color: var(--grey) !important; */
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+  /* border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important; */
   /* box-shadow: var(--shadow-bottom) !important; */
-  height: 40px !important;
-  /* padding: 5px !important; */
+  height: 49px !important;
+  padding: 0 !important;
   /* width: 100% !important; */
   /* z-index: 10 !important; */
 }
@@ -337,9 +372,8 @@ td {
 }
 
 /* highlight active alarm */
-/* todo: aktiver alarm wie der share button (mit border, ohne bg, in blau) */
+/* todo: aktiver alarm wie der share button von evernote (mit border, ohne bg, in blau) */
 a[title="Set alarm"] {
-  color: var(--primary) !important;
   font-size: small !important;
   font-weight: bold !important;
 }
@@ -351,12 +385,12 @@ a[title="Set alarm"] {
   > div
   > div
   > div[style="padding-top: 10px; padding-bottom: 10px;"] {
-  background-color: var(--grey) !important;
-  border-bottom: var(--border) !important;
-  box-shadow: var(--shadow-bottom) !important;
-  margin-top: -1px !important;
+  /* background-color: var(--grey) !important; */
+  /* border-bottom: var(--border) !important; */
+  /* box-shadow: var(--shadow-bottom) !important; */
+  /* margin-top: -1px !important; */
   padding: 0 !important;
-  z-index: 20 !important;
+  /* z-index: 20 !important; */
 }
 
 /* breadcrumbs (In:...) */
@@ -375,7 +409,7 @@ a[title="Set alarm"] {
   > div
   > div[style="padding-top: 10px; padding-bottom: 10px;"]
   > button:hover {
-  background-color: var(--secondary) !important;
+  background-color: rgba(0, 0, 0, 0.1) !important;
 }
 .rli-editor
   > div
@@ -383,6 +417,13 @@ a[title="Set alarm"] {
   > div[style="padding-top: 10px; padding-bottom: 10px;"]
   > button
   span {
+  color: inherit;
+}
+.rli-editor
+  > div
+  > div
+  > div[style="padding-top: 10px; padding-bottom: 10px;"]
+  span[class*="icon"] {
   color: var(--icons) !important;
 }
 
@@ -394,17 +435,21 @@ a[title="Set alarm"] {
   background: none !important;
   /* background-color: var(--white) !important; */
 }
+.editor-toolbar i,
+.editor-toolbar span {
+  color: var(--icons) !important;
+}
+/* todo: toggle editors button */
 
 /* content */
 .rli-editor > div > div > div:nth-last-of-type(3) {
-  /* border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
-  width: 100% !important; */
+  border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
+  /* width: 100% !important; */
   padding-bottom: 10px;
 }
 
-/* TODO: local search entweder:
- * - floating anzeigen (wie bei VS Code)
- * - oder neben tag-list in einer Reihe
+/* TODO: local search:
+ * - evtl. doch eher relative über tag-list (sonst probleme bei zoom)
  */
 
 /* todo: for .tag-list soll ein 10px breiter rand bleiben in split view (border in mitte) */
@@ -428,20 +473,15 @@ a[title="Set alarm"] {
   > div
   > div
   > div[style$="align-items: center;"]:not(:empty):not(:first-of-type) {
-    /* border: none !important;
-    background: rgba(0, 0, 0, 0.1);
-    border-radius: var(--dialog-radius);
-    margin-bottom: 10px;
-    width: fit-content; */
-    /* todo: wenn aktiv geht split border nicht bis runter */
-    position: relative;
-    background: rgba(0, 0, 0, 0.1);
-    bottom: 10px;
-    border-radius: var(--dialog-radius);
-    padding: 0 2px !important;
-    border: none !important;
-    width: fit-content !important;
-    z-index: 100 !important;
+  position: absolute;
+  background: rgba(100, 100, 100, 0.9);
+  bottom: 70px;
+  border-radius: var(--dialog-radius);
+  padding: 0 2px !important;
+  border: none !important;
+  width: fit-content !important;
+  z-index: 100 !important;
+  right: 10px;
 }
 .rli-editor
   > div
@@ -449,6 +489,12 @@ a[title="Set alarm"] {
   > div[style$="align-items: center;"]:not(:empty):not(:first-of-type)
   input {
   /* border:1px solid rgba(0, 0, 0, 0.1) !important; */
+}
+.fas.fa-times,
+.fas.fa-chevron-up,
+.fas.fa-chevron-down {
+  color: var(--icons) !important;
+  /* color: rgba(255, 255, 255, 0.5) !important; */
 }
 
 /* info text for local search */
@@ -476,7 +522,7 @@ a[title="Set alarm"] {
 .smalltalk .page,
 .tox .tox-dialog > div,
 div[style^="z-index: 9999;"] > div {
-  background-color: var(--grey) !important;
+  /* background-color: var(--grey) !important; */
   border-radius: var(--dialog-radius) !important;
   font-size: small !important;
 }
