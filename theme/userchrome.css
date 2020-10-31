@@ -13,16 +13,14 @@ html {
   --white: rgb(255, 255, 255);
   --overlay: rgba(255, 255, 255, 0.5);
 
-  /* TODO remove - replace with --dark-grey */
-  --border-color: rgb(221, 221, 221);
-
   /* --icons: rgb(115, 133, 152); */
-  --icons: rgba(0, 0, 0, 0.5);
+  --icons: rgba(150, 150, 150, 0.4);
+  /* --icons: rgba(0, 0, 0, 0.5); */
 
   /* TWEAK: Set to none if no borders shall be shown (not tested) */
   --border: 1px solid var(--dark-grey);
 
-  /* TWEAK: Change to get the rounded corners for inputs, buttons and selects back (e.g. "3px") */
+  /* TWEAK: Change to adapt the style of the corners of some UI elements */
   --button-radius: 5px;
   --dialog-radius: 10px;
   --input-radius: 10px;
@@ -210,9 +208,8 @@ td {
  *************************************************************************************************/
 
 .side-bar .list-item-container:hover {
-  background-color: rgba(0, 0, 0, 0.1) !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
 }
-/* todo: current active entry - workaround */
 /* .side-bar .jrWaSt.list-item-container {
   background-color: rgba(0, 0, 0, 0.2) !important;
 } */
@@ -241,20 +238,13 @@ td {
  *  NOTE LIST
  *************************************************************************************************/
 
-/* search icon */
+/* icon search */
 .rli-noteListControls > div > div:first-of-type button span {
-  color: var(--icons) !important;
+  color: rgba(150, 150, 150, 0.4) !important;
 }
 
-/* todo: floating plus button
- * - eigentliche buttons werden nur bei hoover über plus button angezeigt (wie bei apps)
- * - div ist wie button 35x35, buttons normal invisble
- * - bei hoover werden buttons angezeigt
- */
-
-/* floating new buttons */
+/* floating new note/to-do buttons */
 .rli-noteListControls > div > div:nth-child(2) {
-  /* border-radius: var(--dialog-radius); */
   bottom: 10px;
   position: fixed;
   z-index: 10;
@@ -279,44 +269,23 @@ td {
   border-right: none !important;
 }
 
-/* note list entries - variante 1 */
-/* TODO überschreibt drag&drop marker */
-/* .note-list .list-item-container {
-  margin: 0 auto !important;
-  border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
-  width: auto !important;
-  margin: 0 10px !important;
-}
-.note-list .list-item-container a,
-.note-list .list-item-container div {
-  padding: 0 !important;
-}
-.note-list .list-item-container::before {
-  border: none !important;
-}
-.note-list > div:last-of-type {
-  border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
+/* note list entries */
+.note-list > div:first-of-type {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
   margin: 0 10px;
 }
-.note-list .list-item-container:hover {
-  background-color: rgba(0, 0, 0, 0.1) !important;
+.note-list .list-item-container {
+  margin: 0 10px !important;
+  width: auto !important;
+}
+.note-list .list-item-container::before {
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  left: 0 !important;
+  width: 100% !important;
 }
 .note-list .list-item-container > a,
 .note-list .list-item-container > div {
-  padding: 0 3px !important;
-} */
-
-/* note list entries - variante 2 */
-.rli-noteListControls > div,
-.note-list .list-item-container::before {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
-}
-.note-list .list-item-container {
-  padding: 0 10px !important;
-}
-.note-list .list-item-container a,
-.note-list .list-item-container div {
-  padding: 0 !important;
+  padding: 0 2px !important;
 }
 .note-list .list-item-container:hover {
   background-color: rgba(0, 0, 0, 0.1) !important;
@@ -328,7 +297,10 @@ td {
   text-overflow: ellipsis;
 }
 
-/* todo: empty note list comment ohne bg */
+/* external editing icon */
+.note-list .list-item-container i {
+  opacity: 0.3 !important;
+}
 
 /**************************************************************************************************
  *  PLUGIN PANEL
@@ -437,7 +409,7 @@ a[title="Set alarm"] {
 }
 .editor-toolbar i,
 .editor-toolbar span {
-  color: var(--icons) !important;
+  opacity: 0.4 !important;
 }
 /* todo: toggle editors button */
 

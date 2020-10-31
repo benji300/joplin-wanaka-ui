@@ -9,7 +9,7 @@
 		"version": "2.0.0",
 		"tasks": [
 			{
-				"label": "Compare with user profile directory",
+				"label": "Diff with user profile directory",
 				"command": "C:/Program Files/Beyond Compare 4/BCompare.exe",
 				"group": "build",
 				"args": [
