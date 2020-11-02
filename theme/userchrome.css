@@ -60,7 +60,7 @@ i.icon-notes {
 } */
 
 /* TWEAK: Show/hide "click to add tags..." (if note already has tags) */
-.tag-list + span {
+a[Title="Tags"] + div > span {
   display: none !important;
 }
 
@@ -121,11 +121,6 @@ button,
 .fas {
   background: none !important;
 }
-.fas.fa-times,
-.fas.fa-chevron-up,
-.fas.fa-chevron-down {
-  color: var(--icons) !important;
-}
 
 /* table cells */
 th {
@@ -159,14 +154,23 @@ th {
   color: var(--white) !important;
 }
 
-/* decrease opacity of icons and labels in editor */
-/* todo: toggle editors button */
+/* decrease opacity of icons and labels */
+/* new notebook button */
 .side-bar > div > div > button,
+/* external editing button */
+.note-list .list-item-container i,
+/* last changed timestamp */
 .rli-editor > div > div > div > input + span,
+/* toolbar buttons */
 .editor-toolbar i,
 .editor-toolbar span,
+/* todo: toggle editors button */
+/* help buttons */
+.fa-question-circle,
+/* tags buttons */
 span.icon-tags,
-.tag-list + span {
+/* click to add tags label */
+a[Title="Tags"] + div > span {
   opacity: 0.4 !important;
 }
 
@@ -217,9 +221,6 @@ span.icon-tags,
 .side-bar .list-item-container:hover {
   background-color: rgba(255, 255, 255, 0.1) !important;
 }
-/* .side-bar .jrWaSt.list-item-container {
-  background-color: rgba(0, 0, 0, 0.2) !important;
-} */
 
 /* synchronize area */
 .side-bar > div:last-of-type {
@@ -237,9 +238,6 @@ span.icon-tags,
 .side-bar > div:last-of-type > button span {
   color: rgba(255, 255, 255, 0.5) !important;
 }
-/* .side-bar > div:last-of-type > button:hover span {
-  color: rgba(0, 0, 0, 0.7) !important;
-} */
 
 /**************************************************************************************************
  *  NOTE LIST
@@ -337,11 +335,6 @@ span.icon-tags,
 .rli-noteListControls > div > div:nth-child(2) button span {
   color: rgb(255, 255, 255) !important;
   font-size: 20px !important;
-}
-
-/* external editing icon */
-.note-list .list-item-container i {
-  opacity: 0.3 !important;
 }
 
 /**************************************************************************************************
@@ -448,52 +441,29 @@ a[title="Set alarm"] {
   color: var(--icons) !important;
 }
 
-/* editor toolbar(s) */
+/* editor toolbars */
 .editor-toolbar,
 .joplin-tinymce > div,
 .joplin-tinymce .tox .tox-toolbar__primary,
 .joplin-tinymce .tox-toolbar__group {
   background: none !important;
-  /* background-color: var(--white) !important; */
 }
 
 /* content */
 .rli-editor > div > div > div:nth-last-of-type(3) {
   border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
-  /* width: 100% !important; */
-  padding-bottom: 10px;
-}
-
-/* TODO: local search:
- * - evtl. doch eher relative über tag-list (sonst probleme bei zoom)
- */
-
-/* todo: for .tag-list soll ein 10px breiter rand bleiben in split view (border in mitte) */
-
-/* local search & tag list */
-.rli-editor
-  > div
-  > div
-  > div[style*="align-items: center;"]:not(:empty):not(:first-of-type) {
-  /* background-color: var(--grey) !important; */
-  border-top: var(--border) !important;
-  /* width: 100% !important; */
-  /* z-index: 10 !important; */
 }
 
 /* floating local search */
-/* todo: icons hell */
-/* todo: info text hell ohne bg */
-/* todo: gleicher stil für dialoge  */
 .rli-editor
   > div
   > div
   > div[style$="align-items: center;"]:not(:empty):not(:first-of-type) {
   border: none !important;
-  z-index: 10 !important;
+  bottom: 10px;
   height: 0;
   position: relative;
-  bottom: 10px;
+  z-index: 10 !important;
 }
 .rli-editor
   > div
@@ -507,30 +477,35 @@ a[title="Set alarm"] {
   > div
   > div[style$="align-items: center;"]:not(:empty):not(:first-of-type)
   > div {
-  border: none !important;
-  background: rgba(60, 65, 70, 0.95);
+  background: rgba(10, 15, 20, 0.95);
   border-radius: var(--dialog-radius);
-  position: relative;
+  border: none !important;
   bottom: 15px;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.5) !important;
   padding: 0 2px !important;
+  position: relative;
 }
-/* .rli-editor
-  > div
-  > div
-  > div[style$="align-items: center;"]:not(:empty):not(:first-of-type)
-  input {
-  border:1px solid rgba(0, 0, 0, 0.1) !important;
-} */
 .fas.fa-times,
 .fas.fa-chevron-up,
 .fas.fa-chevron-down {
-  color: var(--icons) !important;
-  /* color: rgba(255, 255, 255, 0.5) !important; */
+  /* icons */
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+.rli-editor > div > div > div:nth-last-child(2) > div div {
+  /* info text for local search in rendered markodwn*/
+  background: none !important;
+  color: rgba(255, 255, 255, 0.5) !important;
 }
 
-/* info text for local search */
-.rli-editor > div > div > div:nth-last-child(2) > div div {
-  /* background: none !important; */
+/* tag list */
+.rli-editor
+  > div
+  > div
+  > div[style*="align-items: center;"]:not(:empty):not(:first-of-type) {
+  border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+a[Title="Tags"] + div > span {
+  border: 1px solid red !important;
 }
 
 /**************************************************************************************************
