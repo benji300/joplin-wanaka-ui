@@ -292,9 +292,11 @@ td {
 }
 
 /* note list entries */
+.rli-noteList > div > div:not(.note-list),
 .note-list > div:first-of-type {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
-  margin: 0 10px;
+  background: none !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
+  margin: 0 10px !important;
 }
 .note-list .list-item-container {
   margin: 0 10px !important;
