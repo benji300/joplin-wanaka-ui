@@ -54,10 +54,9 @@ i.icon-notes {
 } */
 
 /* TWEAK: Show/hide toggle editors button */
-/* button[aria-label="Toggle editors"] {
-  todo
+button[title="Toggle editors"] {
   display: none !important;
-} */
+}
 
 /* TWEAK: Show/hide "click to add tags..." (if note already has tags) */
 a[Title="Tags"] + div > span {
@@ -98,7 +97,6 @@ select:focus {
 
 /* buttons */
 button,
-.button,
 /* codemirror */
 .smalltalk .page button,
 /* tinymce */
@@ -159,12 +157,14 @@ th {
 .side-bar > div > div > button,
 /* external editing button */
 .note-list .list-item-container i,
+.icon-share,
 /* last changed timestamp */
 .rli-editor > div > div > div > input + span,
 /* toolbar buttons */
-.editor-toolbar i,
-.editor-toolbar span,
-/* todo: toggle editors button */
+.editor-toolbar .button,
+.tox .tox-tbtn,
+/* toggle editors button */
+button[title="Toggle editors"],
 /* help buttons */
 .fa-question-circle,
 /* tags buttons */
@@ -359,52 +359,40 @@ a[Title="Tags"] + div > span {
 
 /* editor column */
 .rli-editor > div {
-  /* padding: 5px 10px 0 10px !important; */
-  padding: 0 10px !important;
+  padding: 5px 10px 0 10px !important;
   width: 100% !important;
 }
 
 /* empty notebook */
 .rli-editor > div:empty {
   background-color: rgba(255, 255, 255, 0.1) !important;
-  /* opacity: 1 !important; */
 }
 
 /* note title bar */
 .rli-editor > div > div > div:first-of-type {
-  /* background-color: var(--grey) !important; */
-  /* border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important; */
-  /* box-shadow: var(--shadow-bottom) !important; */
-  height: 49px !important;
+  height: auto !important;
   padding: 0 !important;
-  /* width: 100% !important; */
-  /* z-index: 10 !important; */
+}
+.rli-editor > div > div > div:first-of-type > input {
+  margin: 0 !important;
 }
 .rli-editor > div > div > div:first-of-type > .editor-toolbar {
   background: none !important;
-  /* background-color: var(--grey) !important; */
+  padding: 0 !important;
 }
 
 /* highlight active alarm */
-/* todo: aktiver alarm wie der share button von evernote (mit border, ohne bg, in blau) */
 a[title="Set alarm"] {
   font-size: small !important;
   font-weight: bold !important;
 }
 
 /* navigation bar (below note title) */
-/* todo: anpassen an design */
-/* todo: test mit dunkel theme - evtl. muss border-top bei .editor-toolbar sein */
 .rli-editor
   > div
   > div
   > div[style="padding-top: 10px; padding-bottom: 10px;"] {
-  /* background-color: var(--grey) !important; */
-  /* border-bottom: var(--border) !important; */
-  /* box-shadow: var(--shadow-bottom) !important; */
-  /* margin-top: -1px !important; */
   padding: 0 !important;
-  /* z-index: 20 !important; */
 }
 
 /* breadcrumbs (In:...) */
@@ -414,8 +402,7 @@ a[title="Set alarm"] {
   > div[style="padding-top: 10px; padding-bottom: 10px;"]
   > button {
   background: none !important;
-  margin-bottom: 2px !important;
-  margin-left: 5px !important;
+  margin-bottom: 3px !important;
   padding: 0 3px !important;
 }
 .rli-editor
@@ -447,6 +434,9 @@ a[title="Set alarm"] {
 .joplin-tinymce .tox .tox-toolbar__primary,
 .joplin-tinymce .tox-toolbar__group {
   background: none !important;
+}
+.rli-editor .editor-toolbar {
+  padding: 3px 0 !important;
 }
 
 /* content */
