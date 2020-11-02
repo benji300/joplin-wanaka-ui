@@ -243,23 +243,45 @@ td {
   color: rgba(150, 150, 150, 0.4) !important;
 }
 
-/* floating new note/to-do buttons */
+/* floating new note button */
 .rli-noteListControls > div > div:nth-child(2) {
-  bottom: 10px;
+  background: var(--primary);
+  border-radius: 100px;
+  bottom: 15px;
+  box-shadow: -1px 2px 4px 0px rgba(0, 0, 0, 0.5);
+  color: rgb(255, 255, 255);
+  height: 35px;
   position: fixed;
+  width: 35px;
   z-index: 10;
 }
+.rli-noteListControls > div > div:nth-child(2):hover {
+  background: transparent !important;
+  box-shadow: none !important;
+  width: auto;
+}
+.rli-noteListControls > div > div:nth-child(2)::before {
+  content: "+";
+  font-size: 28px;
+  margin: auto;
+}
+.rli-noteListControls > div > div:nth-child(2):hover::before {
+  content: "";
+}
 .rli-noteListControls > div > div:nth-child(2) button {
+  display: none;
+}
+.rli-noteListControls > div > div:nth-child(2):hover button {
   border-radius: 200px !important;
-  margin-right: 0 10px 0 0 !important;
+  box-shadow: -1px 2px 4px 0px rgba(0, 0, 0, 0.5) !important;
+  display: flex !important;
+  margin: 0 10px 0 0 !important;
   min-height: 35px !important;
   min-width: 35px !important;
+  transition: 0.3s;
 }
-/* .rli-noteListControls > div > div:nth-child(2) > button:hover {
-  background-color: rgba(0, 0, 0, 0.1) !important;
-} */
 .rli-noteListControls > div > div:nth-child(2) button span {
-  /* color: var(--icons) !important; */
+  color: rgb(255, 255, 255) !important;
   font-size: 20px !important;
 }
 
