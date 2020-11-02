@@ -185,9 +185,17 @@ span.icon-tags,
 .rli-sideBarColumn > span > div,
 .rli-noteListColumn > span > div,
 .rli-pluginColumn > span > div {
-  right: -3px !important;
-  width: 6px !important;
+  right: -2px !important;
+  width: 4px !important;
   z-index: 1 !important;
+}
+.rli-sideBarColumn > span > div:hover,
+.rli-noteListColumn > span > div:hover,
+.rli-pluginColumn > span > div:hover,
+.rli-sideBarColumn > span > div:active,
+.rli-noteListColumn > span > div:active,
+.rli-pluginColumn > span > div:active {
+  background: rgba(0, 0, 0, 0.1);
 }
 
 /* date picker */
@@ -340,9 +348,16 @@ span.icon-tags,
  *  PLUGIN PANEL
  *************************************************************************************************/
 
-.rli-pluginColumn {
-  /* background-color: var(--grey) !important;
-  border-left: var(--border) !important; */
+.rli-pluginColumn > div {
+  min-height: 100px !important;
+  padding: 0 10px !important;
+  width: auto !important;
+}
+.rli-pluginColumn > div > iframe {
+  border: none !important;
+}
+.rli-pluginColumn > div:not(:first-of-type) > iframe {
+  border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
 }
 
 /**************************************************************************************************
