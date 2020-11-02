@@ -7,16 +7,63 @@
 	"settings": {},
 	"tasks": {
 		"version": "2.0.0",
+		"presentation": {
+			"reveal": "never",
+		},
+		"problemMatcher": [],
 		"tasks": [
+			{
+				"label": "Edit userchrome.css from user profile directory",
+				"command": "powershell",
+				"group": "build",
+				"args": [
+					"code C:/Users/${env:username}/.config/${input:profile}/userchrome.css",
+				]
+			},
+			{
+				"label": "Edit userstyle.css from user profile directory",
+				"command": "powershell",
+				"group": "build",
+				"args": [
+					"code C:/Users/${env:username}/.config/${input:profile}/userstyle.css",
+				]
+			},
 			{
 				"label": "Diff with user profile directory",
 				"command": "C:/Program Files/Beyond Compare 4/BCompare.exe",
 				"group": "build",
 				"args": [
-					"C:/Users/%username%/.config/joplin-desktop",
+					"C:/Users/${env:username}/.config/${input:profile}",
 					"${workspaceFolder}/theme"
 				],
-				"problemMatcher": []
+				"isBackground": true
+			},
+			{
+				"label": "Open user profile directory",
+				"command": "powershell",
+				"group": "build",
+				"args": [
+					"Invoke-Item C:/Users/${env:username}/.config/${input:profile}"
+				],
+				"isBackground": true
+			}
+		],
+		"inputs": [
+			{
+				"id": "profile",
+				"description": "Select user profile directory",
+				"type": "pickString",
+				"default": "default",
+				"options": [
+					{
+						"label": "default",
+						"value": "joplin-desktop"
+					},
+					{
+						"label": "development",
+						"value": "joplindev-desktop"
+					}
+				]
 			}
 		]
 	}
