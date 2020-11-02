@@ -370,8 +370,9 @@ a[Title="Tags"] + div > span {
 
 /* note title bar */
 .rli-editor > div > div > div:first-of-type {
-  height: auto !important;
-  padding: 0 !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  height: 35px !important;
+  padding: 5px 0 !important;
 }
 .rli-editor > div > div > div:first-of-type > input {
   margin: 0 !important;
@@ -381,7 +382,7 @@ a[Title="Tags"] + div > span {
   padding: 0 !important;
 }
 
-/* highlight active alarm */
+/* active alarm */
 a[title="Set alarm"] {
   font-size: small !important;
   font-weight: bold !important;
@@ -442,6 +443,9 @@ a[title="Set alarm"] {
 /* content */
 .rli-editor > div > div > div:nth-last-of-type(3) {
   border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+.rli-editor div {
+  border-color: rgba(0, 0, 0, 0.1) !important;
 }
 
 /* floating local search */
