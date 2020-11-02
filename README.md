@@ -1,8 +1,8 @@
-# Clean & Light Theme
+# Joplin - Wanaka UI
 
-_clean-light-theme_ is a theme to adapt the UI of [Joplin](https://joplinapp.org/)'s desktop application.
+_joplin-wanaka-ui_ is a theme to adapt the UI of [Joplin](https://joplinapp.org/)'s desktop application.
 
-> **NOTE** - This theme was tested with Joplin **v1.3.9**.
+> **NOTE** - This theme was tested with Joplin **v1.3.10**.
 
 > **CAUTION** - This theme currently only works with the build-in **Light** theme.\
 > Which is set via `Tools > Options > Appearance > Preferred light theme`
@@ -79,7 +79,7 @@ This theme changes the following parts of the user interface.
 
 ## Support
 
-If you need help or found a bug, open an issue on the [GitHub repository](https://github.com/benji300-joplin-extensions/clean-light-theme/issues).
+If you need help or found a bug, open an issue on the [GitHub repository](https://github.com/benji300/joplin-wanaka-ui/issues).
 
 ## Changes
 
