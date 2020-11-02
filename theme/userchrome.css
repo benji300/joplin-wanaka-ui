@@ -45,7 +45,7 @@ i.icon-notes {
 
 /* TWEAK: Show/hide "last changed" timestamp next to the note title */
 .rli-editor > div > div > div > input + span {
-  /* todo: display: none !important; */
+  display: none !important;
 }
 
 /* TWEAK: Show/hide editor toolbar (not in WYSIWYG editor mode and also not the toolbar next to the note title) */
@@ -54,23 +54,18 @@ i.icon-notes {
 } */
 
 /* TWEAK: Show/hide toggle editors button */
-button[aria-label="Toggle editors"] {
-  /* todo: display: none !important; */
-}
+/* button[aria-label="Toggle editors"] {
+  todo
+  display: none !important;
+} */
 
 /* TWEAK: Show/hide "click to add tags..." (if note already has tags) */
 .tag-list + span {
-  /* todo: display: none !important; */
-}
-
-/* TWEAK: Show/hide new folder button */
-.side-bar > div > div > button {
   display: none !important;
 }
 
-/* TWEAK: Show/hide new to-do/note buttons */
-/* button[title="New to-do"],
-button[title="New note"] {
+/* TWEAK: Show/hide new folder button */
+/* .side-bar > div > div > button {
   display: none !important;
 } */
 
@@ -83,8 +78,6 @@ input,
 select {
   /* background-color: rgba(255, 255, 255, 0.5) !important; */
   border-radius: var(--input-radius) !important;
-  /* todo: nur input von global/local search ohne border - sonst auch in dialogs überschrieben */
-  border: none !important;
   font-family: Roboto !important;
   padding: 3px 8px !important;
 }
@@ -136,11 +129,11 @@ button,
 
 /* table cells */
 th {
-  background-color: var(--dark-grey) !important;
+  background-color: rgba(0, 0, 0, 0.1) !important;
 }
-td {
+/* td {
   background-color: var(--white) !important;
-}
+} */
 
 /* global tag style */
 .css-19qsih1-multiValue,
@@ -166,6 +159,17 @@ td {
   color: var(--white) !important;
 }
 
+/* decrease opacity of icons and labels in editor */
+/* todo: toggle editors button */
+.side-bar > div > div > button,
+.rli-editor > div > div > div > input + span,
+.editor-toolbar i,
+.editor-toolbar span,
+span.icon-tags,
+.tag-list + span {
+  opacity: 0.4 !important;
+}
+
 /* scrollbars */
 ::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.1) !important;
@@ -184,11 +188,6 @@ td {
   right: -3px !important;
   width: 6px !important;
   z-index: 1 !important;
-}
-
-/* main background color */
-#react-root > div > div {
-  /* background-color: var(--grey) !important; */
 }
 
 /* date picker */
@@ -237,6 +236,11 @@ td {
 /**************************************************************************************************
  *  NOTE LIST
  *************************************************************************************************/
+
+/* global search */
+.rli-noteListControls input {
+  border: none !important;
+}
 
 /* icon search */
 .rli-noteListControls > div > div:first-of-type button span {
@@ -295,8 +299,10 @@ td {
 .rli-noteList > div > div:not(.note-list),
 .note-list > div:first-of-type {
   background: none !important;
-  border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
-  margin: 0 10px !important;
+  text-align: center !important;
+  /* TWEAK: enable to get a border above the first entry (also for empty folders) */
+  /* border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
+  margin: 0 10px !important; */
 }
 .note-list .list-item-container {
   margin: 0 10px !important;
@@ -431,11 +437,6 @@ a[title="Set alarm"] {
   background: none !important;
   /* background-color: var(--white) !important; */
 }
-.editor-toolbar i,
-.editor-toolbar span {
-  opacity: 0.4 !important;
-}
-/* todo: toggle editors button */
 
 /* content */
 .rli-editor > div > div > div:nth-last-of-type(3) {
@@ -474,6 +475,13 @@ a[title="Set alarm"] {
   height: 0;
   position: relative;
   bottom: 10px;
+}
+.rli-editor
+  > div
+  > div
+  > div[style$="align-items: center;"]:not(:empty):not(:first-of-type)
+  input {
+  border: none !important;
 }
 .rli-editor
   > div
@@ -529,9 +537,6 @@ div[style^="z-index: 9999;"] > div {
   /* background-color: var(--grey) !important; */
   border-radius: var(--dialog-radius) !important;
   font-size: small !important;
-}
-div[class$="control"] input {
-  border: none !important;
 }
 
 /* note properties */
