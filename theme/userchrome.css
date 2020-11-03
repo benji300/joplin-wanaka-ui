@@ -13,9 +13,7 @@ html {
   --white: rgb(255, 255, 255);
   --overlay: rgba(255, 255, 255, 0.5);
 
-  /* --icons: rgb(115, 133, 152); */
   --icons: rgba(150, 150, 150, 0.4);
-  /* --icons: rgba(0, 0, 0, 0.5); */
 
   /* TWEAK: Set to none if no borders shall be shown (not tested) */
   --border: 1px solid var(--dark-grey);
@@ -29,9 +27,6 @@ html {
   /* TWEAK: Change the style of the tags */
   --tag-color: var(--primary);
   --tag-radius: 100px;
-
-  /* TWEAK: Set to none if no shadow shall be shown below the note title bar */
-  /* --shadow-bottom: 0px 4px 4px -4px rgba(0, 0, 0, 0.1); */
 }
 
 /**************************************************************************************************
@@ -75,24 +70,9 @@ a[Title="Tags"] + div > span {
 /* user inputs */
 input,
 select {
-  /* background-color: rgba(255, 255, 255, 0.5) !important; */
   border-radius: var(--input-radius) !important;
   font-family: Roboto !important;
   padding: 3px 8px !important;
-}
-input:focus,
-input:hover,
-select:focus,
-select:hover {
-  /* background-color: rgba(255, 255, 255, 0.1) !important; */
-}
-input:focus,
-select:focus {
-  /* background-color: rgba(255, 255, 255, 0.1) !important; */
-  /* border: 1px solid rgba(0, 0, 0, 0.1) !important; */
-}
-.tox .tox-dialog input {
-  background-color: var(--white) !important;
 }
 
 /* buttons */
@@ -111,7 +91,6 @@ button,
 .smalltalk .page button,
 .tox button[class^="tox-button"] {
   background: none !important;
-  background-color: rgb(255, 255, 255) !important;
   border: var(--border) !important;
 }
 
@@ -124,9 +103,6 @@ button,
 th {
   background-color: rgba(0, 0, 0, 0.1) !important;
 }
-/* td {
-  background-color: var(--white) !important;
-} */
 
 /* global tag style */
 .css-19qsih1-multiValue,
@@ -344,6 +320,7 @@ a[Title="Tags"] + div > span {
   padding: 0 10px !important;
   width: auto !important;
 }
+/* do not show border after last element */
 .rli-pluginColumn > div > iframe {
   border: none !important;
 }
@@ -431,10 +408,7 @@ a[title="Set alarm"] {
 }
 
 /* editor toolbars */
-.editor-toolbar,
-.joplin-tinymce > div,
-.joplin-tinymce .tox .tox-toolbar__primary,
-.joplin-tinymce .tox-toolbar__group {
+.editor-toolbar {
   background: none !important;
 }
 .rli-editor .editor-toolbar {
@@ -442,7 +416,6 @@ a[title="Set alarm"] {
 }
 
 /* content */
-/* todo: replace with concrete class attribute when present */
 .rli-editor > div > div > div[style="display: flex; flex: 1 1 0%;"] {
   border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
@@ -499,19 +472,25 @@ a[title="Set alarm"] {
   color: var(--primary) !important;
 }
 
-/* TODO: links auch in primary */
+/**************************************************************************************************
+ *  TINY MCE
+ *************************************************************************************************/
+
+.joplin-tinymce > div,
+.tox-edit-area > iframe,
+.joplin-tinymce .tox .tox-toolbar__primary,
+.joplin-tinymce .tox-toolbar__group {
+  background: none !important;
+}
 
 /**************************************************************************************************
  *  DIALOGS
  *************************************************************************************************/
 
-/* TODO: Prüfe alle dialoge hell und dunkel */
-
 /* common look for dialogs */
 .smalltalk .page,
 .tox .tox-dialog > div,
 div[style^="z-index: 9999;"] > div {
-  /* background-color: var(--grey) !important; */
   border-radius: var(--dialog-radius) !important;
   font-size: small !important;
 }
@@ -522,11 +501,6 @@ div[style^="z-index: 9999;"] a {
 }
 
 /* reduce size of (command palette) drop-down list entries */
-/* div[style^="z-index: 9999;"] .item-list div {
-  // items must have a fixed height (40px) - otherwise the scrollbar doesn't work as expected (yet)
-  padding: 5px !important;
-  height: auto !important;
-} */
 div[style^="z-index: 9999;"] .item-list div > div {
   font-size: small !important;
   margin-bottom: 0 !important;
