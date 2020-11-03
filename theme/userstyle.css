@@ -3,8 +3,9 @@
  *************************************************************************************************/
 
 html {
-  --floating-bg: rgba(10, 15, 20, 0.95);
+  --floating-bg: rgb(42, 43, 44);
   --overlay-dark1: rgba(0, 0, 0, 0.1);
+  --overlay-dark2: rgba(0, 0, 0, 0.2);
   --overlay-dark5: rgba(0, 0, 0, 0.5);
   --overlay-light1: rgba(255, 255, 255, 0.1);
   --overlay-light5: rgba(255, 255, 255, 0.5);
@@ -17,7 +18,7 @@ html {
   --scroll-radius: 3px;
 
   /* TWEAK: Show shadow on floating TOC */
-  --shadow: 0 0 4px 0 var(--overlay-dark5);
+  --shadow: 0 2px 12px 0 var(--overlay-dark2);
 }
 
 /**************************************************************************************************

@@ -7,7 +7,7 @@ html {
   --primary: rgb(45, 107, 220);
   --white: rgb(255, 255, 255);
   --icons: rgba(150, 150, 150, 0.4);
-  --floating-bg: rgba(10, 15, 20, 0.95);
+  --floating-bg: rgb(42, 43, 44);
 
   --overlay-dark1: rgba(0, 0, 0, 0.1);
   --overlay-dark2: rgba(0, 0, 0, 0.2);
@@ -16,7 +16,7 @@ html {
   --overlay-light5: rgba(255, 255, 255, 0.5);
 
   /* TWEAK: Show shadow on floating buttons and local search */
-  --shadow: 0 0 4px 0 var(--overlay-dark5);
+  --shadow: 0 2px 12px 0 var(--overlay-dark2);
 
   /* TWEAK: Set to none if no borders shall be shown (not tested) */
   --default-border: 1px solid var(--overlay-dark1);
@@ -457,6 +457,9 @@ a[title="Set alarm"] {
   box-shadow: var(--shadow) !important;
   padding: 0 2px !important;
   position: relative;
+  max-width: 95%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .fas.fa-times,
 .fas.fa-chevron-up,

@@ -1,6 +1,6 @@
 # Joplin - Wanaka UI
 
-_joplin-wanaka-ui_ is a theme to adapt the UI of [Joplin](https://joplinapp.org/)'s desktop application.
+_joplin-wanaka-ui_ is a theme to adapt the UI of [Joplin's](https://joplinapp.org/) desktop application.
 
 > **NOTE** - Tested with Joplin **v1.3.10**.
 
