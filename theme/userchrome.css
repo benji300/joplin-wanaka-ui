@@ -7,7 +7,7 @@ html {
   --primary: rgb(45, 107, 220);
   --white: rgb(255, 255, 255);
   --icons: rgba(150, 150, 150, 0.4);
-  --floating-bg: rgb(42, 43, 44);
+  --floating-bg: rgb(72, 73, 74);
 
   --overlay-dark1: rgba(0, 0, 0, 0.1);
   --overlay-dark2: rgba(0, 0, 0, 0.2);
@@ -412,8 +412,25 @@ a[title="Set alarm"] {
 .editor-toolbar {
   background: none !important;
 }
-.rli-editor .editor-toolbar {
+
+/* floating toolbar at the bottom */
+/* todo:
+ * - icons
+ * - background local search input
+ * - same height for search and toolbar
+ * - box-shadow currently doesnt work
+ * - test with sidebar bg as bg color
+ * - test with tinymce
+ * - test with position:relative
+ */
+.rli-editor > div > div > div > div > div > div.editor-toolbar {
+  background: var(--floating-bg) !important;
+  border-radius: var(--dialog-radius);
+  bottom: 50px;
+  left: 50%;
   padding: 3px 0 !important;
+  position: fixed;
+  z-index: 20;
 }
 
 /* content */
@@ -432,11 +449,10 @@ a[title="Set alarm"] {
   > div
   > div
   > div[style$="align-items: center;"]:not(:empty):not(:first-of-type) {
-  border: none !important;
-  bottom: 10px;
+  /* border: none !important; */
   height: 0;
-  position: relative;
-  z-index: 10 !important;
+  /* position: relative; */
+  /* z-index: 10 !important; */
 }
 .rli-editor
   > div
@@ -453,7 +469,7 @@ a[title="Set alarm"] {
   background: var(--floating-bg);
   border-radius: var(--dialog-radius);
   border: none !important;
-  bottom: 15px;
+  bottom: 65px;
   box-shadow: var(--shadow) !important;
   padding: 0 2px !important;
   position: relative;
