@@ -11,13 +11,18 @@
 			"reveal": "never",
 		},
 		"problemMatcher": [],
+		"windows": {
+			"options": {
+				"cwd": "C:/Users/${env:username}"
+			}
+		},
 		"tasks": [
 			{
 				"label": "Edit userchrome.css from user profile directory",
 				"command": "powershell",
 				"group": "build",
 				"args": [
-					"code C:/Users/${env:username}/.config/${input:profile}/userchrome.css",
+					"code ./.config/${input:profile}/userchrome.css",
 				]
 			},
 			{
@@ -25,7 +30,7 @@
 				"command": "powershell",
 				"group": "build",
 				"args": [
-					"code C:/Users/${env:username}/.config/${input:profile}/userstyle.css",
+					"code ./.config/${input:profile}/userstyle.css",
 				]
 			},
 			{
@@ -33,7 +38,7 @@
 				"command": "C:/Program Files/Beyond Compare 4/BCompare.exe",
 				"group": "build",
 				"args": [
-					"C:/Users/${env:username}/.config/${input:profile}",
+					"./.config/${input:profile}",
 					"${workspaceFolder}/theme"
 				],
 				"isBackground": true
@@ -43,7 +48,7 @@
 				"command": "powershell",
 				"group": "build",
 				"args": [
-					"Invoke-Item C:/Users/${env:username}/.config/${input:profile}"
+					"Invoke-Item ./.config/${input:profile}"
 				],
 				"isBackground": true
 			}
@@ -55,14 +60,8 @@
 				"type": "pickString",
 				"default": "default",
 				"options": [
-					{
-						"label": "default",
-						"value": "joplin-desktop"
-					},
-					{
-						"label": "development",
-						"value": "joplindev-desktop"
-					}
+					"joplin-desktop",
+					"joplindev-desktop"
 				]
 			}
 		]
