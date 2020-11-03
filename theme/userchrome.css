@@ -5,18 +5,20 @@
 html {
   /* TWEAK: Adapt colors here (might not change colors everywhere) */
   --primary: rgb(45, 107, 220);
-  --secondary: rgb(203, 218, 241);
-
-  --dark: rgb(49, 54, 64);
-  --grey: rgb(244, 245, 246);
-  --dark-grey: rgb(229, 229, 229);
   --white: rgb(255, 255, 255);
-  --overlay: rgba(255, 255, 255, 0.5);
-
   --icons: rgba(150, 150, 150, 0.4);
+  --floating-bg: rgba(10, 15, 20, 0.95);
+
+  --overlay-dark1: rgba(0, 0, 0, 0.1);
+  --overlay-dark2: rgba(0, 0, 0, 0.2);
+  --overlay-dark5: rgba(0, 0, 0, 0.5);
+  --overlay-light1: rgba(255, 255, 255, 0.1);
+  --overlay-light5: rgba(255, 255, 255, 0.5);
+
+  --box-shadow: 0 0 4px 0 var(--overlay-dark5);
 
   /* TWEAK: Set to none if no borders shall be shown (not tested) */
-  --border: 1px solid var(--dark-grey);
+  --default-border: 1px solid var(--overlay-dark1);
 
   /* TWEAK: Change to adapt the style of the corners of some UI elements */
   --button-radius: 5px;
@@ -26,6 +28,7 @@ html {
 
   /* TWEAK: Change the style of the tags */
   --tag-color: var(--primary);
+  --tag-font-color: var(--white);
   --tag-radius: 100px;
 }
 
@@ -101,7 +104,7 @@ button,
 
 /* table cells */
 th {
-  background-color: rgba(0, 0, 0, 0.1) !important;
+  background-color: var(--overlay-dark1) !important;
 }
 
 /* global tag style */
@@ -110,7 +113,7 @@ th {
 .tag-list span {
   background-color: var(--tag-color) !important;
   border-radius: var(--tag-radius) !important;
-  color: var(--white) !important;
+  color: var(--tag-font-color) !important;
   flex: 0 !important;
   font-size: x-small !important;
   font-weight: normal !important;
@@ -125,7 +128,7 @@ th {
 .css-1n5lu3i,
 .css-d0yvbe {
   border-radius: var(--tag-radius) !important;
-  color: var(--white) !important;
+  color: var(--tag-font-color) !important;
 }
 
 /* decrease opacity of icons and labels */
@@ -152,7 +155,7 @@ a[Title="Tags"] + div > span {
 
 /* scrollbars */
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.1) !important;
+  background-color: var(--overlay-dark1) !important;
   border-radius: var(--scroll-radius) !important;
 }
 
@@ -175,7 +178,7 @@ a[Title="Tags"] + div > span {
 .rli-sideBarColumn > span > div:active,
 .rli-noteListColumn > span > div:active,
 .rli-pluginColumn > span > div:active {
-  background: rgba(0, 0, 0, 0.5);
+  background: var(--overlay-dark5);
 }
 
 /* date picker */
@@ -193,24 +196,24 @@ a[Title="Tags"] + div > span {
  *************************************************************************************************/
 
 .side-bar .list-item-container:hover {
-  background-color: rgba(255, 255, 255, 0.1) !important;
+  background-color: var(--overlay-light1) !important;
 }
 
 /* synchronize area */
 .side-bar > div:last-of-type {
-  background-color: rgba(0, 0, 0, 0.2) !important;
+  background-color: var(--overlay-dark2) !important;
 }
 
 /* synchronize button */
 .side-bar > div:last-of-type > button {
-  background-color: rgba(0, 0, 0, 0.2) !important;
+  background-color: var(--overlay-dark2) !important;
   border: none !important;
 }
 .side-bar > div:last-of-type > button:hover {
-  background-color: rgba(255, 255, 255, 0.1) !important;
+  background-color: var(--overlay-light1) !important;
 }
 .side-bar > div:last-of-type > button span {
-  color: rgba(255, 255, 255, 0.5) !important;
+  color: var(--overlay-light5) !important;
 }
 
 /**************************************************************************************************
@@ -227,7 +230,7 @@ a[Title="Tags"] + div > span {
 
 /* icon search */
 .rli-noteListControls > div > div:first-of-type button span {
-  color: rgba(150, 150, 150, 0.4) !important;
+  color: var(--icons) !important;
 }
 
 /* note list */
@@ -242,7 +245,7 @@ a[Title="Tags"] + div > span {
   background: none !important;
   text-align: center !important;
   /* TWEAK: enable to get a border above the first entry (also for empty folders) */
-  /* border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
+  /* border-top: var(--default-border) !important;
   margin: 0 12px !important; */
 }
 .note-list .list-item-container {
@@ -250,7 +253,7 @@ a[Title="Tags"] + div > span {
   width: auto !important;
 }
 .note-list .list-item-container::before {
-  border-color: rgba(0, 0, 0, 0.1) !important;
+  border-color: var(--overlay-dark1) !important;
   left: 0 !important;
   width: 100% !important;
 }
@@ -261,7 +264,7 @@ a[Title="Tags"] + div > span {
   padding-left: 3px !important;
 }
 .note-list .list-item-container:hover {
-  background-color: rgba(0, 0, 0, 0.1) !important;
+  background-color: var(--overlay-dark1) !important;
 }
 .note-list .list-item-container > a > span {
   /* adds "..." to notes with long titles */
@@ -274,8 +277,8 @@ a[Title="Tags"] + div > span {
   background: var(--primary);
   border-radius: 100px !important;
   bottom: 15px;
-  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.5);
-  color: rgb(255, 255, 255);
+  box-shadow: var(--box-shadow) !important;
+  color: var(--white);
   height: 35px;
   position: fixed;
   width: 35px;
@@ -299,7 +302,7 @@ a[Title="Tags"] + div > span {
 }
 .rli-noteListControls > div > div:nth-child(2):hover button {
   border-radius: 100px !important;
-  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.5) !important;
+  box-shadow: var(--box-shadow) !important;
   display: flex !important;
   margin: 0 10px 0 0 !important;
   min-height: 35px !important;
@@ -307,8 +310,7 @@ a[Title="Tags"] + div > span {
   transition: 0.3s;
 }
 .rli-noteListControls > div > div:nth-child(2) button span {
-  color: rgb(255, 255, 255) !important;
-  font-size: 20px !important;
+  color: var(--white) !important;
 }
 
 /**************************************************************************************************
@@ -325,7 +327,7 @@ a[Title="Tags"] + div > span {
   border: none !important;
 }
 .rli-pluginColumn > div:not(:first-of-type) > iframe {
-  border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
+  border-top: var(--default-border) !important;
 }
 
 /**************************************************************************************************
@@ -334,23 +336,19 @@ a[Title="Tags"] + div > span {
 
 /* editor column */
 .rli-editor > div {
-  border-color: rgba(0, 0, 0, 0.1) !important;
+  border-color: var(--overlay-dark1) !important;
   padding: 5px 10px 0 10px !important;
   width: 100% !important;
-}
-/* editor layout splitter */
-.rli-editor > div > div > div > div > div > div:last-of-type {
-  border-color: rgba(0, 0, 0, 0.1) !important;
 }
 
 /* empty notebook */
 .rli-editor > div:empty {
-  background-color: rgba(255, 255, 255, 0.1) !important;
+  background-color: var(--overlay-light1) !important;
 }
 
 /* note title bar */
 .rli-editor > div > div > div:first-of-type {
-  border-color: rgba(0, 0, 0, 0.1) !important;
+  border-color: var(--overlay-dark1) !important;
   height: 40px !important;
   padding-bottom: 5px !important;
 }
@@ -391,7 +389,7 @@ a[title="Set alarm"] {
   > div
   > div[style="padding-top: 10px; padding-bottom: 10px;"]
   > button:hover {
-  background-color: rgba(0, 0, 0, 0.1) !important;
+  background-color: var(--overlay-dark1) !important;
 }
 .rli-editor
   > div
@@ -419,8 +417,13 @@ a[title="Set alarm"] {
 
 /* content */
 .rli-editor > div > div > div[style="display: flex; flex: 1 1 0%;"] {
-  border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+  border-top: var(--default-border) !important;
+  border-bottom: var(--default-border) !important;
+}
+
+/* editor layout splitter */
+.rli-editor > div > div > div > div > div > div:last-of-type {
+  border-color: var(--overlay-dark1) !important;
 }
 
 /* floating local search */
@@ -446,11 +449,11 @@ a[title="Set alarm"] {
   > div
   > div[style$="align-items: center;"]:not(:empty):not(:first-of-type)
   > div {
-  background: rgba(10, 15, 20, 0.95);
+  background: var(--floating-bg);
   border-radius: var(--dialog-radius);
   border: none !important;
   bottom: 15px;
-  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.5) !important;
+  box-shadow: var(--box-shadow) !important;
   padding: 0 2px !important;
   position: relative;
 }
@@ -458,12 +461,12 @@ a[title="Set alarm"] {
 .fas.fa-chevron-up,
 .fas.fa-chevron-down {
   /* icons */
-  color: rgba(255, 255, 255, 0.5) !important;
+  color: var(--overlay-light5) !important;
 }
 .rli-editor > div > div > div:nth-last-child(2) > div div {
   /* label for local search in rendered markodwn*/
   background: none !important;
-  color: rgba(255, 255, 255, 0.5) !important;
+  color: var(--overlay-light5) !important;
 }
 
 /**************************************************************************************************
