@@ -3,26 +3,21 @@
  *************************************************************************************************/
 
 html {
-  --primary: rgb(45, 107, 220);
-  --icon-color: rgb(115, 133, 152);
-  --bg-dark: rgb(49, 54, 64);
-  --bg-light: rgb(244, 245, 246);
-  --bg-content: rgb(255, 255, 255);
-  --border-color: rgb(221, 221, 221);
-  --font-dark: rgb(50, 55, 63);
-  --font-light: rgb(255, 255, 255);
+  --floating-bg: rgba(10, 15, 20, 0.95);
+  --overlay-dark1: rgba(0, 0, 0, 0.1);
+  --overlay-dark5: rgba(0, 0, 0, 0.5);
+  --overlay-light1: rgba(255, 255, 255, 0.1);
+  --overlay-light5: rgba(255, 255, 255, 0.5);
 
-  /* set to none if no borders shall be shown (used for headlines here) */
-  --border: 1px solid var(--border-color);
+  /* TWEAK: Set to none if no borders shall be shown (not tested) */
+  --default-border: 1px solid var(--overlay-light1);
 
   /* TWEAK: Change to adapt the style of the corners of some UI elements */
-  --button-radius: 5px;
   --dialog-radius: 10px;
-  --input-radius: 10px;
   --scroll-radius: 3px;
 
-  /* set to none if no shadow shall be shown below the floating toc */
-  --shadow: 0px 4px 4px -4px rgba(0, 0, 0, 0.1);
+  /* TWEAK: Show shadow on floating TOC */
+  --shadow: 0 0 4px 0 var(--overlay-dark5);
 }
 
 /**************************************************************************************************
@@ -36,7 +31,7 @@ body {
 
 /* scrollbars */
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.1) !important;
+  background-color: var(--overlay-dark1) !important;
   border-radius: var(--scroll-radius) !important;
 }
 
@@ -62,48 +57,43 @@ li.md-checkbox input[type="checkbox"]:checked + label {
 nav.table-of-contents > ul {
   background: none;
   font-size: small;
-  height: 95%;
+  height: 90%;
   overflow: hidden;
-  padding: 2px;
+  padding: 5px;
   position: fixed;
-  right: 0;
+  right: 6px;
   top: 0;
   width: 10px;
   z-index: 99;
 }
 nav.table-of-contents > ul:hover {
-  margin-right: 10px;
-  background-color: var(--bg-light);
+  background-color: var(--floating-bg);
   border-radius: var(--dialog-radius);
-  border: var(--border);
   box-shadow: var(--shadow);
-  cursor: pointer;
   overflow: scroll;
   width: auto;
-}
-nav.table-of-contents > ul:hover::before {
-  content: "TABLE OF CONTENTS";
 }
 nav.table-of-contents > ul:hover li {
   display: list-item;
 }
 nav.table-of-contents ul {
   list-style-type: none;
+  margin-bottom: 0;
   margin-left: 8px;
   margin-top: 0;
-  margin-bottom: 0;
 }
 nav.table-of-contents li {
   display: none;
-  line-height: 1.5em;
+  line-height: 1.8em;
   margin-bottom: 0;
   white-space: nowrap;
 }
 nav.table-of-contents li a {
+  color: var(--overlay-light5) !important;
   padding: 5px;
 }
 nav.table-of-contents ul li ul li {
-  border-left: 1px solid var(--border-color) !important;
+  border-left: var(--default-border) !important;
 }
 nav.table-of-contents a {
   text-decoration: none !important;
