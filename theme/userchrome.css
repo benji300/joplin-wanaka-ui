@@ -204,15 +204,13 @@ a[Title="Tags"] + div > span {
 
 /* date picker */
 .rdtPicker {
-  background: var(--grey) !important;
-  /* border-radius: var(--dialog-radius) !important; */
+  border-radius: var(--dialog-radius) !important;
+  padding: 8px !important;
 }
-.rdtPicker td.rdtToday {
-  background-color: var(--primary) !important;
-}
-.rdtPicker td.rdtDay:hover {
-  background-color: var(--grey) !important;
-}
+/* .rdtPicker td.rdtToday {
+} */
+/* .rdtPicker td.rdtDay:hover {
+} */
 
 /**************************************************************************************************
  *  SIDEBAR
@@ -362,6 +360,9 @@ a[Title="Tags"] + div > span {
   padding: 5px 10px 0 10px !important;
   width: 100% !important;
 }
+.rli-editor div {
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
 
 /* empty notebook */
 .rli-editor > div:empty {
@@ -441,11 +442,10 @@ a[title="Set alarm"] {
 }
 
 /* content */
-.rli-editor > div > div > div:nth-last-of-type(3) {
+/* todo: replace with concrete class attribute when present */
+.rli-editor > div > div > div[style="display: flex; flex: 1 1 0%;"] {
   border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
-}
-.rli-editor div {
-  border-color: rgba(0, 0, 0, 0.1) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
 }
 
 /* floating local search */
@@ -486,20 +486,9 @@ a[title="Set alarm"] {
   color: rgba(255, 255, 255, 0.5) !important;
 }
 .rli-editor > div > div > div:nth-last-child(2) > div div {
-  /* info text for local search in rendered markodwn*/
+  /* label for local search in rendered markodwn*/
   background: none !important;
   color: rgba(255, 255, 255, 0.5) !important;
-}
-
-/* tag list */
-.rli-editor
-  > div
-  > div
-  > div[style*="align-items: center;"]:not(:empty):not(:first-of-type) {
-  border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
-}
-a[Title="Tags"] + div > span {
-  border: 1px solid red !important;
 }
 
 /**************************************************************************************************
