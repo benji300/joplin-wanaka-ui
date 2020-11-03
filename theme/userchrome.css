@@ -334,10 +334,12 @@ a[Title="Tags"] + div > span {
 
 /* editor column */
 .rli-editor > div {
+  border-color: rgba(0, 0, 0, 0.1) !important;
   padding: 5px 10px 0 10px !important;
   width: 100% !important;
 }
-.rli-editor div {
+/* editor layout splitter */
+.rli-editor > div > div > div > div > div > div:last-of-type {
   border-color: rgba(0, 0, 0, 0.1) !important;
 }
 
