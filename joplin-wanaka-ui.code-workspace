@@ -18,7 +18,7 @@
 		},
 		"tasks": [
 			{
-				"label": "Edit userchrome.css from user profile directory",
+				"label": "Edit userchrome.css from user profile",
 				"command": "powershell",
 				"group": "build",
 				"args": [
@@ -26,7 +26,7 @@
 				]
 			},
 			{
-				"label": "Edit userstyle.css from user profile directory",
+				"label": "Edit userstyle.css from user profile",
 				"command": "powershell",
 				"group": "build",
 				"args": [
@@ -34,7 +34,7 @@
 				]
 			},
 			{
-				"label": "Diff with user profile directory",
+				"label": "Compare with user profile (BCompare)",
 				"command": "C:/Program Files/Beyond Compare 4/BCompare.exe",
 				"group": "build",
 				"args": [
@@ -44,7 +44,14 @@
 				"isBackground": true
 			},
 			{
-				"label": "Open user profile directory",
+				"label": "Compare active file with...",
+				"type": "process",
+				"command": "${command:workbench.files.action.compareFileWith}",
+				"group": "build",
+				"isBackground": true
+			},
+			{
+				"label": "Open user profile",
 				"command": "powershell",
 				"group": "build",
 				"args": [

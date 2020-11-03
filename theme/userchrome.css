@@ -371,8 +371,8 @@ a[Title="Tags"] + div > span {
 /* note title bar */
 .rli-editor > div > div > div:first-of-type {
   border-color: rgba(0, 0, 0, 0.1) !important;
-  height: 35px !important;
-  padding: 5px 0 !important;
+  height: 40px !important;
+  padding-bottom: 5px !important;
 }
 .rli-editor > div > div > div:first-of-type > input {
   margin: 0 !important;
