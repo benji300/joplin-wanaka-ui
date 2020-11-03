@@ -175,7 +175,7 @@ a[Title="Tags"] + div > span {
 .rli-sideBarColumn > span > div:active,
 .rli-noteListColumn > span > div:active,
 .rli-pluginColumn > span > div:active {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 /* date picker */

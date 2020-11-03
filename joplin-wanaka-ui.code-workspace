@@ -51,6 +51,22 @@
 				"isBackground": true
 			},
 			{
+				"label": "Open Joplin",
+				"command": "C:/Program Files/Joplin/Joplin.exe",
+				"group": "build",
+				"isBackground": true
+			},
+			{
+				"label": "Open Joplin (Development)",
+				"command": "C:/Program Files/Joplin/Joplin.exe",
+				"group": "build",
+				"args": [
+					"--env",
+					"dev"
+				],
+				"isBackground": true
+			},
+			{
 				"label": "Open user profile",
 				"command": "powershell",
 				"group": "build",
