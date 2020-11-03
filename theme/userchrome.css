@@ -15,7 +15,8 @@ html {
   --overlay-light1: rgba(255, 255, 255, 0.1);
   --overlay-light5: rgba(255, 255, 255, 0.5);
 
-  --box-shadow: 0 0 4px 0 var(--overlay-dark5);
+  /* TWEAK: Show shadow on floating buttons and local search */
+  --shadow: 0 0 4px 0 var(--overlay-dark5);
 
   /* TWEAK: Set to none if no borders shall be shown (not tested) */
   --default-border: 1px solid var(--overlay-dark1);
@@ -41,6 +42,11 @@ i.icon-notes {
   display: none !important;
 }
 
+/* TWEAK: Show/hide new folder button */
+/* .side-bar > div > div > button {
+  display: none !important;
+} */
+
 /* TWEAK: Show/hide "last changed" timestamp next to the note title */
 .rli-editor > div > div > div > input + span {
   display: none !important;
@@ -60,11 +66,6 @@ button[title="Toggle editors"] {
 a[Title="Tags"] + div > span {
   display: none !important;
 }
-
-/* TWEAK: Show/hide new folder button */
-/* .side-bar > div > div > button {
-  display: none !important;
-} */
 
 /**************************************************************************************************
  *  GLOBAL STYLES
@@ -87,9 +88,9 @@ button,
   border-radius: var(--button-radius) !important;
   box-shadow: none !important;
   color: var(--primary) !important;
+  cursor: pointer !important;
   font-weight: normal !important;
   text-shadow: none !important;
-  cursor: pointer !important;
 }
 .smalltalk .page button,
 .tox button[class^="tox-button"] {
@@ -277,7 +278,7 @@ a[Title="Tags"] + div > span {
   background: var(--primary);
   border-radius: 100px !important;
   bottom: 15px;
-  box-shadow: var(--box-shadow) !important;
+  box-shadow: var(--shadow) !important;
   color: var(--white);
   height: 35px;
   position: fixed;
@@ -302,7 +303,7 @@ a[Title="Tags"] + div > span {
 }
 .rli-noteListControls > div > div:nth-child(2):hover button {
   border-radius: 100px !important;
-  box-shadow: var(--box-shadow) !important;
+  box-shadow: var(--shadow) !important;
   display: flex !important;
   margin: 0 10px 0 0 !important;
   min-height: 35px !important;
@@ -453,7 +454,7 @@ a[title="Set alarm"] {
   border-radius: var(--dialog-radius);
   border: none !important;
   bottom: 15px;
-  box-shadow: var(--box-shadow) !important;
+  box-shadow: var(--shadow) !important;
   padding: 0 2px !important;
   position: relative;
 }
