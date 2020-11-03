@@ -2,17 +2,14 @@
 
 _joplin-wanaka-ui_ is a theme to adapt the UI of [Joplin](https://joplinapp.org/)'s desktop application.
 
-> **NOTE** - This theme was tested with Joplin **v1.3.10**.
+> **NOTE** - Tested with Joplin **v1.3.10**.
 
-> **CAUTION** - This theme currently only works with the build-in **Light** theme.\
-> Which is set via `Tools > Options > Appearance > Preferred light theme`
+> **Visit [Lake Wanaka](https://www.newzealand.com/int/lake-wanaka/)! 😉**
 
 ## Table of contents
 
 - [Features](#features)
-  - [Main screen](#main-screen)
-  - [Options](#options)
-  - [Dialogs and other views](#dialogs-and-other-views)
+- [Screenshots](#screenshots)
 - [Installation](#installation)
 - [UI tweaks](#ui-tweaks)
 - [Support](#support)
@@ -23,33 +20,27 @@ _joplin-wanaka-ui_ is a theme to adapt the UI of [Joplin](https://joplinapp.org/
 
 This theme changes the following parts of the user interface.
 
-### Main screen
-
-- Colored Tags
-- No rounded corners (except Tags)
-- Colored `note title`, "`breadcrumbs`", `local search` and `tag list`
-  - To focus more on the actual content of the note
+- Colored tags
+- Changed style of synchronize area and button
+- Cleaner note list including floating new note/to-do button
+- Improved style of column splitters (highlighted while dragging)
+- Decreased visibility of toolbar icons in editor (to focus more on content)
 - Floating TOC on the right hand site for rendered Markdown mode
   - Based on the idea from [here](https://discourse.joplinapp.org/t/toc-as-the-sidebar/5979/34)
-- Highlight Input boxes if focused
-- Changed style of Synchronize button
+- Floating local search
 - Changed visibility of some UI elements
   - Can be reverted manually - see [UI tweaks](#ui-tweaks)
+- Works with all build-in color themes
 
-![Main Screen](./assets/main.png)
+## Screenshots
 
-### Options
+### Light Theme
 
-- TODO
+![Light Theme](./assets/main-light.png)
 
-![Options](./assets/options.png)
+### Dark Theme
 
-### Dialogs and other views
-
-- Unified design (same background, buttons, etc.)
-- Not finished for all views or dialogs
-
-![Dialog](./assets/dialog.png)
+![Dark Theme](./assets/main-dark.png)
 
 ## Installation
 
@@ -61,19 +52,23 @@ This theme changes the following parts of the user interface.
 
 - Click `Custom stylesheet for rendered Markdown` and paste the content from [userstyle.css](./theme/userstyle.css)
 
-- Edit `Custom stylesheet for Joplin-wide app styles` and paste the content from [userchrome.css](./theme/userchrome.css)
+- Click `Custom stylesheet for Joplin-wide app styles` and paste the content from [userchrome.css](./theme/userchrome.css)
 
-- Restart Joplin to see the changes
+- Save your changes and restart Joplin to see the changes
 
 ## UI tweaks
 
 - Open Joplin
 
-- Open the user profile directy via `Help > Open profile directory`
+- Navigate to `Joplin > Preferences > Appearances`
 
-- Open `userchrome.css` and/or `userstyles.css` with any text editor
+- Click `Advanced Settings`
 
-- Search for `TWEAK` and change the lines as described if you want
+- Click `Custom stylesheet for rendered Markdown` to open `userstyle.css` in any text editor
+
+- Click `Custom stylesheet for Joplin-wide app styles` to open `userchrome.css` in any text editor
+
+- Search for `TWEAK` and change the styles as described if you want
 
 - Save your changes and restart Joplin to see the changes
 
