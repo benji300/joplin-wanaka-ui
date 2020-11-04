@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-> Tested with Joplin v1.3.10
+> Tested with Joplin v1.3.15
 
 - Initial Release
 
