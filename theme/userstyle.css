@@ -3,7 +3,7 @@
  *************************************************************************************************/
 
 html {
-  --floating-bg: rgb(42, 43, 44);
+  --floating-bg: lightslategrey;
   --overlay-dark1: rgba(0, 0, 0, 0.1);
   --overlay-dark2: rgba(0, 0, 0, 0.2);
   --overlay-dark5: rgba(0, 0, 0, 0.5);
@@ -58,14 +58,14 @@ li.md-checkbox input[type="checkbox"]:checked + label {
 nav.table-of-contents > ul {
   background: none;
   font-size: small;
-  height: 90%;
+  height: 80%;
   overflow: hidden;
   padding: 5px;
   position: fixed;
   right: 6px;
   top: 0;
   width: 10px;
-  z-index: 99;
+  z-index: 10;
 }
 nav.table-of-contents > ul:hover {
   background-color: var(--floating-bg);

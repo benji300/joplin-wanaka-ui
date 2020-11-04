@@ -7,7 +7,6 @@ html {
   --primary: rgb(45, 107, 220);
   --white: rgb(255, 255, 255);
   --icons: rgba(150, 150, 150, 0.4);
-  --floating-bg: rgb(72, 73, 74);
 
   --overlay-dark1: rgba(0, 0, 0, 0.1);
   --overlay-dark2: rgba(0, 0, 0, 0.2);
@@ -53,14 +52,14 @@ i.icon-notes {
 }
 
 /* TWEAK: Show/hide editor toolbar (not in WYSIWYG editor mode and also not the toolbar next to the note title) */
-/* .rli-editor > div > div > div > div > div div.editor-toolbar {
+/* .rli-editor > div > div > div > div > div > div.editor-toolbar {
   display: none !important;
 } */
 
 /* TWEAK: Show/hide toggle editors button */
-button[title="Toggle editors"] {
+/* button[title="Toggle editors"] {
   display: none !important;
-}
+} */
 
 /* TWEAK: Show/hide "click to add tags..." (if note already has tags) */
 a[Title="Tags"] + div > span {
@@ -75,6 +74,8 @@ a[Title="Tags"] + div > span {
 input,
 select {
   border-radius: var(--input-radius) !important;
+  border-style: solid;
+  border-width: 1px;
   font-family: Roboto !important;
   padding: 3px 8px !important;
 }
@@ -160,7 +161,7 @@ a[Title="Tags"] + div > span {
   border-radius: var(--scroll-radius) !important;
 }
 
-/* workaround for splitters */
+/* highlight splitters while dragging */
 .rli-sideBarColumn,
 .rli-noteListColumn,
 .rli-pluginColumn {
@@ -171,13 +172,13 @@ a[Title="Tags"] + div > span {
 .rli-pluginColumn > span > div {
   right: -2px !important;
   width: 4px !important;
-  z-index: 1 !important;
+  z-index: 10 !important;
 }
 .rli-sideBarColumn > span > div:hover,
-.rli-noteListColumn > span > div:hover,
-.rli-pluginColumn > span > div:hover,
 .rli-sideBarColumn > span > div:active,
+.rli-noteListColumn > span > div:hover,
 .rli-noteListColumn > span > div:active,
+.rli-pluginColumn > span > div:hover,
 .rli-pluginColumn > span > div:active {
   background: var(--overlay-dark5);
 }
@@ -283,7 +284,7 @@ a[Title="Tags"] + div > span {
   height: 35px;
   position: fixed;
   width: 35px;
-  z-index: 10;
+  z-index: 20 !important;
 }
 .rli-noteListControls > div > div:nth-child(2):hover {
   background: transparent !important;
@@ -350,8 +351,8 @@ a[Title="Tags"] + div > span {
 /* note title bar */
 .rli-editor > div > div > div:first-of-type {
   border-color: var(--overlay-dark1) !important;
-  height: 40px !important;
-  padding-bottom: 5px !important;
+  height: 45px !important;
+  padding: 0 !important;
 }
 .rli-editor > div > div > div:first-of-type > input {
   margin: 0 !important;
@@ -408,29 +409,34 @@ a[title="Set alarm"] {
   color: var(--icons) !important;
 }
 
-/* editor toolbars */
-.editor-toolbar {
-  background: none !important;
-}
-
 /* floating toolbar at the bottom */
 /* todo:
- * - icons
- * - background local search input
- * - same height for search and toolbar
- * - box-shadow currently doesnt work
- * - test with sidebar bg as bg color
- * - test with tinymce
  * - test with position:relative
+ *   - aktuell ist es nicht mittig und auch fix wenn die Größe verändert wird
+ *   - und wenn beim tiny mce die zusätzliche Leiste unten aufpoppt
+ *   - kein overflow wenn screen kleiner wird
+ *     - iwie abfangen - evtl. mit scrollbar? oder zweite Zeile?
+ * - content anpassungen:
+ *   - padding-bottom bei content div wieder einfügen == 5px
+ *   - padding-top dann auch 5px
+ *   - test mit weißem inset shadow oben und unten (damit beim overflow etwas ausgeblendet wird)
+ *     - test mit dark themes
+ * - test with tinymce
+ * - test with dark themes
+ * - update readme
  */
 .rli-editor > div > div > div > div > div > div.editor-toolbar {
-  background: var(--floating-bg) !important;
   border-radius: var(--dialog-radius);
   bottom: 50px;
+  box-shadow: var(--shadow);
   left: 50%;
-  padding: 3px 0 !important;
   position: fixed;
-  z-index: 20;
+  z-index: 20 !important;
+}
+button[title="Toggle editors"] {
+  margin-left: 4px !important;
+  padding-left: 10px !important;
+  border-left: 1px solid rgba(0, 0, 0, 0.1) !important;
 }
 
 /* content */
@@ -444,49 +450,29 @@ a[title="Set alarm"] {
   border-color: var(--overlay-dark1) !important;
 }
 
-/* floating local search */
+/* inline local search (right aligned within tag bar) */
 .rli-editor
   > div
   > div
   > div[style$="align-items: center;"]:not(:empty):not(:first-of-type) {
-  /* border: none !important; */
+  align-items: center;
   height: 0;
-  /* position: relative; */
-  /* z-index: 10 !important; */
-}
-.rli-editor
-  > div
-  > div
-  > div[style$="align-items: center;"]:not(:empty):not(:first-of-type)
-  input {
-  border: none !important;
+  left: 100%;
+  opacity: 0.4 !important;
+  position: relative;
+  transform: translate(-300px, 20px);
+  width: 300px;
 }
 .rli-editor
   > div
   > div
   > div[style$="align-items: center;"]:not(:empty):not(:first-of-type)
   > div {
-  background: var(--floating-bg);
-  border-radius: var(--dialog-radius);
   border: none !important;
-  bottom: 65px;
-  box-shadow: var(--shadow) !important;
-  padding: 0 2px !important;
-  position: relative;
-  max-width: 95%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.fas.fa-times,
-.fas.fa-chevron-up,
-.fas.fa-chevron-down {
-  /* icons */
-  color: var(--overlay-light5) !important;
 }
 .rli-editor > div > div > div:nth-last-child(2) > div div {
-  /* label for local search in rendered markodwn*/
-  background: none !important;
-  color: var(--overlay-light5) !important;
+  /* set overflow behavior for info text */
+  overflow: overlay;
 }
 
 /**************************************************************************************************
