@@ -67,7 +67,7 @@
 				"isBackground": true
 			},
 			{
-				"label": "Open user profile",
+				"label": "Open user profile directory",
 				"command": "powershell",
 				"group": "build",
 				"args": [
