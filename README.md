@@ -21,13 +21,14 @@ _joplin-wanaka-ui_ is a theme to adapt the UI of [Joplin's](https://joplinapp.or
 This theme changes the following parts of the user interface.
 
 - Colored tags
-- Changed style of synchronize area and button
-- Cleaner note list including floating new note/to-do button
+- Cleaner note list including floating plus button to create new notes/to-dos
+- Floating editor toolbar at the bottom of the content (not supported for TinyMCE)
+- Local search inlined with tag list
 - Improved style of column splitters (highlighted while dragging)
-- Decreased visibility of toolbar icons in editor (to focus more on content)
-- Floating TOC on the right hand site for rendered Markdown mode
+- Changed style of synchronize area and button
+- Decreased visibility of toolbar icons (to focus more on content)
+- Floating TOC on the right for rendered Markdown mode
   - Based on the idea from [here](https://discourse.joplinapp.org/t/toc-as-the-sidebar/5979/34)
-- Floating local search
 - Changed visibility of some UI elements
   - Can be reverted manually - see [UI tweaks](#ui-tweaks)
 - Works with all build-in color themes

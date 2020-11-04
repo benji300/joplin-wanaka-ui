@@ -410,28 +410,22 @@ a[title="Set alarm"] {
 }
 
 /* floating toolbar at the bottom */
-/* todo:
- * - test with position:relative
- *   - aktuell ist es nicht mittig und auch fix wenn die Größe verändert wird
- *   - und wenn beim tiny mce die zusätzliche Leiste unten aufpoppt
- *   - kein overflow wenn screen kleiner wird
- *     - iwie abfangen - evtl. mit scrollbar? oder zweite Zeile?
- * - content anpassungen:
- *   - padding-bottom bei content div wieder einfügen == 5px
- *   - padding-top dann auch 5px
- *   - test mit weißem inset shadow oben und unten (damit beim overflow etwas ausgeblendet wird)
- *     - test mit dark themes
- * - test with tinymce
- * - test with dark themes
- * - update readme
- */
+.rli-editor
+  > div
+  > div
+  > div
+  > div
+  > div[style="position: relative; display: flex; flex-direction: row;"]:first-of-type {
+  bottom: 10px;
+  left: 50%;
+  max-width: 95%;
+  position: absolute !important;
+  transform: translate(-50%);
+  z-index: 20 !important;
+}
 .rli-editor > div > div > div > div > div > div.editor-toolbar {
   border-radius: var(--dialog-radius);
-  bottom: 50px;
   box-shadow: var(--shadow);
-  left: 50%;
-  position: fixed;
-  z-index: 20 !important;
 }
 button[title="Toggle editors"] {
   margin-left: 4px !important;
@@ -443,6 +437,14 @@ button[title="Toggle editors"] {
 .rli-editor > div > div > div[style="display: flex; flex: 1 1 0%;"] {
   border-top: var(--default-border) !important;
   border-bottom: var(--default-border) !important;
+}
+.rli-editor
+  > div
+  > div
+  > div[style="display: flex; flex: 1 1 0%;"]
+  > div
+  > div:last-of-type {
+  padding: 5px 0 !important;
 }
 
 /* editor layout splitter */
