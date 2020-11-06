@@ -7,10 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- None
+
+## [0.1.0] - 2020-11-07
+
 > Tested with Joplin v1.3.15
 
 - Initial Release
-
-## [0.1.0] - xxxx-xx-xx
-
-
