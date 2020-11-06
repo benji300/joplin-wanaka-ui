@@ -1,3 +1,5 @@
+/* JOPLIN WANAKA UI */
+
 /**************************************************************************************************
  *  VARIABLES
  *************************************************************************************************/
@@ -172,7 +174,7 @@ a[Title="Tags"] + div > span {
 .rli-pluginColumn > span > div {
   right: -2px !important;
   width: 4px !important;
-  z-index: 10 !important;
+  z-index: 100 !important;
 }
 .rli-sideBarColumn > span > div:hover,
 .rli-sideBarColumn > span > div:active,

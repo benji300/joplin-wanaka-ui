@@ -1,9 +1,14 @@
+/* JOPLIN WANAKA UI */
+
 /**************************************************************************************************
  *  VARIABLES
  *************************************************************************************************/
-
 html {
-  --floating-bg: lightslategrey;
+  /* side-bar background color from light theme */
+  --floating-bg: rgb(49, 54, 64);
+
+  --link-color: rgb(255, 255, 255);
+
   --overlay-dark1: rgba(0, 0, 0, 0.1);
   --overlay-dark2: rgba(0, 0, 0, 0.2);
   --overlay-dark5: rgba(0, 0, 0, 0.5);
@@ -17,7 +22,7 @@ html {
   --dialog-radius: 10px;
   --scroll-radius: 3px;
 
-  /* TWEAK: Show shadow on floating TOC */
+  /* TWEAK: Show/hide shadow on floating TOC */
   --shadow: 0 2px 12px 0 var(--overlay-dark2);
 }
 
@@ -90,7 +95,8 @@ nav.table-of-contents li {
   white-space: nowrap;
 }
 nav.table-of-contents li a {
-  color: var(--overlay-light5) !important;
+  color: var(--link-color) !important;
+  opacity: 0.8;
   padding: 5px;
 }
 nav.table-of-contents ul li ul li {
