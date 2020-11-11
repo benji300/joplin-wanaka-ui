@@ -2,7 +2,7 @@
 
 _joplin-wanaka-ui_ is a theme to adapt the UI of [Joplin's](https://joplinapp.org/) desktop application.
 
-> **NOTE** - Tested with Joplin **v1.3.15**.
+> **NOTE** - Tested with Joplin **v1.4.9**.
 
 > **Visit [Lake Wanaka](https://www.newzealand.com/int/lake-wanaka/) in New Zealand! 😉**
 

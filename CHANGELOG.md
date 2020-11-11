@@ -7,7 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- None
+> Tested with Joplin v1.4.9
+
+- Improve style of column splitters
 
 ## [0.1.0] - 2020-11-07
 
