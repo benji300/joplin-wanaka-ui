@@ -88,6 +88,7 @@ nav.table-of-contents ul {
   margin-bottom: 0;
   margin-left: 8px;
   margin-top: 0;
+  min-width: 100px;
 }
 nav.table-of-contents li {
   display: none;

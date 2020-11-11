@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 > Tested with Joplin v1.4.9
 
 - Improve style of column splitters
+- Add minimum width to rendered markdown TOC
 
 ## [0.1.0] - 2020-11-07
 
