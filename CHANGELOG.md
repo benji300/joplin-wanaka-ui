@@ -13,6 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add minimum width to rendered markdown TOC
 - Hide "Spell checker" button on note toolbar by default
   - Can be changed in userchrome.css
+- Improve style of synchronize area in side-bar
+- Capitalize "ALL NOTES" entry in side-bar
 
 ## [0.1.0] - 2020-11-07
 

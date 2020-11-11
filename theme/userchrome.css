@@ -213,10 +213,14 @@ a[Title="Tags"] + div > span {
 .side-bar .list-item-container:hover {
   background-color: var(--overlay-light1) !important;
 }
+.folders > div:first-of-type > a {
+  text-transform: uppercase !important;
+}
 
 /* synchronize area */
 .side-bar > div:last-of-type {
   background-color: var(--overlay-dark2) !important;
+  text-align: center !important;
 }
 
 /* synchronize button */
@@ -229,6 +233,7 @@ a[Title="Tags"] + div > span {
 }
 .side-bar > div:last-of-type > button span {
   color: var(--overlay-light5) !important;
+  text-transform: uppercase !important;
 }
 
 /**************************************************************************************************
