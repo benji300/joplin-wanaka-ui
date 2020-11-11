@@ -53,6 +53,11 @@ i.icon-notes {
   display: none !important;
 }
 
+/* TWEAK: Show/hide "Spell checker" button on note toolbar */
+.editor-toolbar a[title="Spell checker"] {
+  display: none !important;
+}
+
 /* TWEAK: Show/hide editor toolbar (not in WYSIWYG editor mode and also not the toolbar next to the note title) */
 /* .rli-editor > div > div > div > div > div > div.editor-toolbar {
   display: none !important;
