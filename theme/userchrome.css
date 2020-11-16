@@ -164,7 +164,11 @@ button[title="Toggle editors"],
 span.icon-tags,
 /* click to add tags label */
 a[Title="Tags"] + div > span {
-  opacity: 0.4 !important;
+  opacity: 0.6 !important;
+}
+/* disabled buttons */
+a.button.disabled {
+  opacity: 0.3 !important;
 }
 
 /* date picker */
