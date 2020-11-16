@@ -7,9 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-> Tested with Joplin v1.4.9
+> Tested with Joplin v1.4.10
+
+### Changed
 
 - Improve style of column splitters
+  - Including support for horizontal splitters
 - Add minimum width to rendered markdown TOC
 - Hide "Spell checker" button on note toolbar by default
   - Can be changed in userchrome.css
