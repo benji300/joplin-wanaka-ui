@@ -73,6 +73,11 @@ a[Title="Tags"] + div > span {
   display: none !important;
 }
 
+/* TWEAK: Show/hide line numbers in CodeMirror */
+/* .CodeMirror-line:before {
+  display: none !important;
+} */
+
 /**************************************************************************************************
  *  GLOBAL STYLES
  *************************************************************************************************/
@@ -498,6 +503,22 @@ button[title="Toggle editors"] {
 
 .cm-header {
   color: var(--primary) !important;
+}
+
+/* add line numbers */
+.CodeMirror-code {
+  counter-reset: line;
+}
+.CodeMirror-line:before {
+  border-right: var(--default-border);
+  color: var(--overlay-dark1);
+  content: counter(line);
+  counter-increment: line;
+  display: inline-block;
+  margin-right: 0.3em;
+  padding-right: 0.3em;
+  /* TEAK: Adjust width if you have lot of lines (ch = Relative to the width of the "0") */
+  width: 3ch;
 }
 
 /**************************************************************************************************

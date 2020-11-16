@@ -9,15 +9,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 > Tested with Joplin v1.4.10
 
+### Added
+
+- Show/hide line numbers in CodeMirror
+  - Based on the idea from [here](https://discourse.joplinapp.org/t/option-to-show-line-numbers-in-editor/8313/22)
+  - Enabled by default, but can be changed in `userchrome.css`
+
 ### Changed
 
 - Improve style of column splitters
   - Including support for horizontal splitters
 - Add minimum width to rendered markdown TOC
-- Hide "Spell checker" button on note toolbar by default
-  - Can be changed in userchrome.css
+- Hide `Spell checker` button on note toolbar by default
+  - Can be changed in `userchrome.css`
 - Improve style of synchronize area in side-bar
-- Capitalize "ALL NOTES" entry in side-bar
+- Capitalize `ALL NOTES` entry in side-bar
 
 ## [0.1.0] - 2020-11-07
 
