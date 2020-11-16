@@ -7,7 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-> Tested with Joplin v1.4.10
+- None
+
+## [0.2.0] - 2020-11-16
+
+> **NOTE** - This theme requires at least version **v1.4.10**
 
 ### Added
 
