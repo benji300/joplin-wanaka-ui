@@ -4,7 +4,12 @@
 			"path": "."
 		}
 	],
-	"settings": {},
+	"settings": {
+		"files.exclude": {
+			"**/.git": true,
+			"**/*.code-workspace": true
+		}
+	},
 	"tasks": {
 		"version": "2.0.0",
 		"presentation": {
@@ -18,7 +23,7 @@
 		},
 		"tasks": [
 			{
-				"label": "Theme: Edit userchrome.css from user profile",
+				"label": "Edit: userchrome.css from user profile",
 				"command": "powershell",
 				"group": "build",
 				"args": [
@@ -26,7 +31,7 @@
 				]
 			},
 			{
-				"label": "Theme: Edit userstyle.css from user profile",
+				"label": "Edit: userstyle.css from user profile",
 				"command": "powershell",
 				"group": "build",
 				"args": [

@@ -2,9 +2,9 @@
 
 _joplin-wanaka-ui_ is a theme to adapt the UI of [Joplin's](https://joplinapp.org/) desktop application.
 
-> **NOTE** - This theme requires at least version **v1.4.10**
+> **Visit [Lake Wanaka](https://www.newzealand.com/int/lake-wanaka/) in New Zealand! :wink:**
 
-> **Visit [Lake Wanaka](https://www.newzealand.com/int/lake-wanaka/) in New Zealand! 😉**
+> :warning: **CAUTION** - This theme requires at least version **v1.4.10**
 
 ## Table of contents
 
@@ -12,7 +12,7 @@ _joplin-wanaka-ui_ is a theme to adapt the UI of [Joplin's](https://joplinapp.or
 - [Screenshots](#screenshots)
 - [Installation](#installation)
 - [UI tweaks](#ui-tweaks)
-- [Support](#support)
+- [Feedback](#feedback)
 - [Changes](#changes)
 - [License](#license)
 
@@ -69,7 +69,7 @@ This theme changes the following parts of the user interface.
 - Search for `TWEAK` and change the styles as described if you want
 - Save your changes and restart Joplin to see the changes
 
-## Support
+## Feedback
 
 If you need help or found a bug, open an issue on [GitHub](https://github.com/benji300/joplin-wanaka-ui/issues).
 
