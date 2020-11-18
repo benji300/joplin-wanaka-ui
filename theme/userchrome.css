@@ -16,6 +16,10 @@ html {
   --overlay-light1: rgba(255, 255, 255, 0.1);
   --overlay-light5: rgba(255, 255, 255, 0.5);
 
+  --opacity-full: 1;
+  --opacity-0-8: 0.8;
+  --opacity-0-5: 0.5;
+
   /* TWEAK: Show shadow on floating buttons and local search */
   --shadow: 0 2px 12px 0 var(--overlay-dark2);
 
@@ -185,27 +189,28 @@ a.button.disabled {
  *  PANELS
  *************************************************************************************************/
 
-/* general panels style */
-.resizableLayoutItem > div {
-  /* border-bottom: var(--default-border); */
+/* general panel styles */
+.rli-root > div.resizableLayoutItem > div.resizableLayoutItem {
+  border-bottom: var(--default-border) !important;
+}
+.rli-root > div.resizableLayoutItem > div {
   min-width: 150px !important;
   width: 100%;
 }
-.resizableLayoutItem > div > div {
-  height: 100%;
+/* remove border from plugin iframes */
+div.resizableLayoutItem iframe {
+  border-bottom: none !important;
 }
 
 /* highlight splitters (vertical and horizontal) while dragging */
 .resizableLayoutItem > span > div {
   z-index: 100 !important;
+  transition: 0.5s;
 }
 .resizableLayoutItem > span > div:hover,
 .resizableLayoutItem > span > div:active {
   background: var(--primary);
-  opacity: 0.8;
-}
-.resizableLayoutItem > span > div:hover {
-  opacity: 0.5;
+  opacity: var(--opacity-0-5);
 }
 
 /* scrollbars */
@@ -249,9 +254,6 @@ a.button.disabled {
  *************************************************************************************************/
 
 /* global search */
-div[height="50"] {
-  height: auto !important;
-}
 div[height="50"] input {
   border: none !important;
 }
@@ -307,13 +309,13 @@ div[height="50"] span[class$="icon-search"] {
 div[height="50"] > div:nth-child(2) {
   background: var(--primary);
   border-radius: 100px !important;
-  bottom: 12px;
+  bottom: 11px;
   box-shadow: var(--shadow) !important;
   color: var(--white);
   height: 35px;
   position: absolute;
   width: 35px;
-  z-index: 20 !important;
+  z-index: 10 !important;
 }
 div[height="50"] > div:nth-child(2):hover {
   background: transparent !important;
