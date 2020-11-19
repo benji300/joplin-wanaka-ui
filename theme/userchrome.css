@@ -287,11 +287,9 @@ div[height="50"] span[class$="icon-search"] {
 .item-list.note-list .list-item-container::before {
   border-color: var(--overlay-dark1) !important;
 }
-.item-list.note-list .list-item-container > a {
-  padding: 0 !important;
-}
+.item-list.note-list .list-item-container > a,
 .item-list.note-list .list-item-container > div {
-  padding-left: 3px !important;
+  padding: 0 !important;
 }
 .item-list.note-list .list-item-container:hover {
   background-color: var(--overlay-dark1) !important;
@@ -513,7 +511,7 @@ button[title="Toggle editors"] {
   counter-reset: line;
 }
 .CodeMirror-line:before {
-  border-right: var(--default-border);
+  /* border-right: var(--default-border); */
   color: var(--overlay-dark1);
   content: counter(line);
   counter-increment: line;
