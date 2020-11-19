@@ -282,16 +282,13 @@ div[height="50"] span[class$="icon-search"] {
   text-align: center !important;
 }
 .item-list.note-list .list-item-container {
-  margin: 0 10px !important;
-  width: auto !important;
+  padding: 0 16px !important;
 }
 .item-list.note-list .list-item-container::before {
   border-color: var(--overlay-dark1) !important;
-  left: 0 !important;
-  width: 100% !important;
 }
 .item-list.note-list .list-item-container > a {
-  padding: 0 3px !important;
+  padding: 0 !important;
 }
 .item-list.note-list .list-item-container > div {
   padding-left: 3px !important;

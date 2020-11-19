@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Improve look of column splitters
 - Improve look of new dynamic panels
+- Change style of note list entries
+  - Active/hover items width full width
 
 ## [0.2.0] - 2020-11-16
 
