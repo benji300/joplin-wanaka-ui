@@ -190,13 +190,18 @@ a.button.disabled {
  *************************************************************************************************/
 
 /* general panel styles */
-.rli-root > div.resizableLayoutItem > div.resizableLayoutItem {
+.rli-root > .resizableLayoutItem > div {
+  min-width: 150px !important;
+  width: 100% !important;
+}
+.rli-root > .resizableLayoutItem > .resizableLayoutItem {
   border-bottom: var(--default-border) !important;
 }
-.rli-root > div.resizableLayoutItem > div {
-  min-width: 150px !important;
-  width: 100%;
+.rli-root > .resizableLayoutItem > .resizableLayoutItem > div {
+  height: 100% !important;
+  width: 100% !important;
 }
+
 /* remove border from plugin iframes */
 div.resizableLayoutItem iframe {
   border-bottom: none !important;
@@ -268,18 +273,13 @@ div[height="50"] span[class$="icon-search"] {
   /* remove border-right - introduced in 1.3.7 */
   border-right: none !important;
 }
-.rli-noteList > div > div {
-  width: 100%;
-}
-.item-list.note-list {
-  width: 100% !important;
-}
 
 /* note list entries */
 .rli-noteList > div > div:not(.note-list),
 .rli-noteList > div > div > div:last-of-type:not(.note-list) > div {
   background: none !important;
   text-align: center !important;
+  width: 100% !important;
 }
 .item-list.note-list .list-item-container {
   padding: 0 16px !important;
@@ -511,13 +511,11 @@ button[title="Toggle editors"] {
   counter-reset: line;
 }
 .CodeMirror-line:before {
-  /* border-right: var(--default-border); */
   color: var(--overlay-dark1);
   content: counter(line);
   counter-increment: line;
   display: inline-block;
   margin-right: 0.3em;
-  padding-right: 0.3em;
   /* TEAK: Adjust width if you have lot of lines (ch = Relative to the width of the "0") */
   width: 3ch;
 }
