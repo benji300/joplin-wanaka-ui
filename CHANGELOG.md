@@ -7,16 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-> :warning: **CAUTION** - Requires at least version **v1.4.10**
-
 - Improve look of column splitters
 - Improve look of new dynamic panels
 - Change style of note list entries
   - Active/hover items width full width
 
 ## [0.2.0] - 2020-11-16
-
-> :warning: **CAUTION** - Requires at least version **v1.4.10**
 
 ### Added
 
@@ -36,7 +32,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Improve look of toolbar buttons to better distinguish disabled ones
 
 ## [0.1.0] - 2020-11-07
-
-> Tested with Joplin v1.3.15
 
 - Initial Release

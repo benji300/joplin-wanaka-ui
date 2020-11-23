@@ -231,6 +231,8 @@ div.resizableLayoutItem iframe {
 .side-bar .list-item-container:hover {
   background-color: var(--overlay-light1) !important;
 }
+
+/* folders */
 .folders > div:first-of-type > a {
   text-transform: uppercase !important;
 }
@@ -264,7 +266,7 @@ div[height="50"] input {
 }
 
 /* icon search */
-div[height="50"] span[class$="icon-search"] {
+.rli-noteList > div span[class$="icon-search"] {
   color: var(--icons) !important;
 }
 
