@@ -362,7 +362,7 @@ div[height="50"] > div:nth-child(2) button span {
 /* note title bar */
 .rli-editor > div > div > div > div:first-of-type {
   border-color: var(--overlay-dark1) !important;
-  height: 45px !important;
+  min-height: 45px !important;
   padding: 0 !important;
 }
 .rli-editor > div > div > div > div:first-of-type > input {

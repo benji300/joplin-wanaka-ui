@@ -6,7 +6,7 @@ _joplin-wanaka-ui_ is a theme to adapt the UI of [Joplin's](https://joplinapp.or
 
 > **NOTE** - This theme works with all built-in color themes
 
-> :warning: **CAUTION** - This theme requires at least version **v1.4.10**
+> :warning: **CAUTION** - Requires Joplin **v1.4.12** or newer
 
 ## Table of contents
 

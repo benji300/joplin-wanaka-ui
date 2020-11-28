@@ -6,8 +6,8 @@
 	],
 	"settings": {
 		"files.exclude": {
-			"**/.git": true,
-			"**/*.code-workspace": true
+			".*": true,
+			"*workspace": true
 		}
 	},
 	"tasks": {

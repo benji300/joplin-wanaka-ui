@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- None
+
+## [0.3.0] - 2020-11-28
+
+### Changed
+
 - Improve look of column splitters
 - Improve look of new dynamic panels
 - Change style of note list entries
