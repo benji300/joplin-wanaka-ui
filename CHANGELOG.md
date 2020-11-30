@@ -7,7 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- None
+### Changed
+
+- Remove border between panels
+- Disable CodeMirror line numbers hack by default
+  - Instead added support for CodeMirror line numbers [plugin](https://github.com/shantanugoel/joplin-plugin-cm-linenumbers/)
+
+### Fixed
+
+- Support two line editor title bar if window size decreases
 
 ## [0.3.0] - 2020-11-28
 

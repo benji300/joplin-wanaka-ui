@@ -78,9 +78,9 @@ a[Title="Tags"] + div > span {
 }
 
 /* TWEAK: Show/hide line numbers in CodeMirror */
-/* .CodeMirror-line:before {
+.CodeMirror-line:before {
   display: none !important;
-} */
+}
 
 /**************************************************************************************************
  *  GLOBAL STYLES
@@ -517,6 +517,15 @@ button[title="Toggle editors"] {
   margin-right: 0.3em;
   /* TEAK: Adjust width if you have lot of lines (ch = Relative to the width of the "0") */
   width: 3ch;
+}
+
+/* Real CodeMirror line numbers */
+.CodeMirror-gutters {
+  background: none !important;
+  border: none !important;
+}
+.CodeMirror-linenumber {
+  color: var(--icons) !important;
 }
 
 /**************************************************************************************************
