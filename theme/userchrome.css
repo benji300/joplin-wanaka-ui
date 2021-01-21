@@ -1,4 +1,4 @@
-/* JOPLIN WANAKA UI */
+/* JOPLIN WANAKA UI - v0.4.0 */
 
 /**************************************************************************************************
  *  VARIABLES
@@ -59,6 +59,15 @@ i.icon-notes {
 
 /* TWEAK: Show/hide "Spell checker" button on note toolbar */
 .editor-toolbar a[title="Spell checker"] {
+  display: none !important;
+}
+
+/* TWEAK: Show/hide breadcrumbs below title */
+.rli-editor
+  > div
+  > div
+  > div
+  > div[style^="padding-top: 10px; padding-bottom: 10px;"] {
   display: none !important;
 }
 
@@ -180,10 +189,6 @@ a.button.disabled {
   border-radius: var(--dialog-radius) !important;
   padding: 8px !important;
 }
-/* .rdtPicker td.rdtToday {
-} */
-/* .rdtPicker td.rdtDay:hover {
-} */
 
 /**************************************************************************************************
  *  PANELS
@@ -349,9 +354,11 @@ div[height="50"] > div:nth-child(2) button span {
   border-color: var(--overlay-dark1) !important;
 }
 .rli-editor > div > div {
-  /* padding: 0 !important; */
-  padding: 5px 10px 0 10px !important;
+  padding: 0 5px !important;
   width: 100% !important;
+}
+.rli-editor > div > div > div > div {
+  padding: 0px !important;
 }
 
 /* empty notebook */
@@ -363,7 +370,6 @@ div[height="50"] > div:nth-child(2) button span {
 .rli-editor > div > div > div > div:first-of-type {
   border-color: var(--overlay-dark1) !important;
   min-height: 45px !important;
-  padding: 0 !important;
 }
 .rli-editor > div > div > div > div:first-of-type > input {
   margin: 0 !important;
@@ -451,7 +457,7 @@ button[title="Toggle editors"] {
 }
 
 /* content */
-.rli-editor > div > div > div > div[style="display: flex; flex: 1 1 0%;"] {
+.rli-editor > div > div > div > div[style^="display: flex; flex: 1 1 0%;"] {
   border-top: var(--default-border) !important;
   border-bottom: var(--default-border) !important;
 }

@@ -1,20 +1,21 @@
-# Joplin - Wanaka UI
+# Joplin Wanaka UI
 
-_joplin-wanaka-ui_ is a theme to adapt the UI of [Joplin's](https://joplinapp.org/) desktop application.
+Joplin Wanaka UI is a theme to adapt the UI of [Joplin's](https://joplinapp.org/) desktop application.
 
 > **Visit [Lake Wanaka](https://www.newzealand.com/int/lake-wanaka/) in New Zealand! :wink:**
 
 > **NOTE** - This theme works with all built-in color themes
 
-> :warning: **CAUTION** - Requires Joplin **v1.4.12** or newer
+> :warning: **CAUTION** - Requires Joplin **v1.6.8** or newer
 
 ## Table of contents
 
 - [Features](#features)
-- [Screenshots](#screenshots)
+  - [Screenshots](#screenshots)
 - [Installation](#installation)
 - [UI tweaks](#ui-tweaks)
 - [Feedback](#feedback)
+- [Support](#support)
 - [Changes](#changes)
 - [License](#license)
 
@@ -40,27 +41,28 @@ This theme changes the following parts of the user interface.
 - Changed visibility of some UI elements by default
   - Can be adapted manually - see [UI tweaks](#ui-tweaks)
 
-## Screenshots
+### Screenshots
 
-### Light Theme
+#### Light Theme
 
 ![Light Theme](./assets/main-light.png)
 
-### Dark Theme
+#### Dark Theme
 
 ![Dark Theme](./assets/main-dark.png)
 
 ## Installation
 
-- Open Joplin
-- Open the user profile directory via `Help > Open profile directory`
-- Download the latest [userstyle.css](./theme/userstyle.css) and [userchrome.css](./theme/userchrome.css) into the opened user profile directory
+### Manual
+
+- Download the latest released stylesheets (`userchrome.css` and `userstyle.css`) from [here](https://github.com/benji300/joplin-wanaka-ui/releases)
+- Open Joplin and navigate to `Help > Open profile directory`
+- Copy the downloaded stylesheets into the opened user profile directory
 - Restart Joplin to see the changes
 
 ## UI tweaks
 
-- Open Joplin
-- Navigate to `Tools > Options > Appearance`
+- Open Joplin and navigate to `Tools > Options > Appearance`
 - Click `Show Advanced Settings`
 - Click `Edit` below `Custom stylesheet for rendered Markdown` to open `userstyle.css` in a text editor
 - Click `Edit` below `Custom stylesheet for Joplin-wide app styles` to open `userchrome.css` in a text editor
@@ -71,12 +73,18 @@ This theme changes the following parts of the user interface.
 
 If you need help or found a bug, open an issue on [GitHub](https://github.com/benji300/joplin-wanaka-ui/issues).
 
+## Support
+
+You like this theme as much as I do and it improves your daily work with Joplin?
+
+Then I would be very happy if you buy me a beer via [PayPal](https://www.paypal.com/donate?hosted_button_id=6FHDGK3PTNU22) :wink::beer:
+
 ## Changes
 
 See [CHANGELOG](./CHANGELOG.md) for details.
 
 ## License
 
-Copyright (c) 2020 Benjamin Seifert
+Copyright (c) 2021 Benjamin Seifert
 
 MIT License. See [LICENSE](./LICENSE) for more information.

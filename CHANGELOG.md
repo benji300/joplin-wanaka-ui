@@ -7,11 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- None
+
+## [0.4.0] - 2021-01-21
+
 ### Changed
 
+- Adaptions for latest release v1.6.8
 - Remove border between panels
 - Disable CodeMirror line numbers hack by default
   - Instead added support for CodeMirror line numbers [plugin](https://github.com/shantanugoel/joplin-plugin-cm-linenumbers/)
+- Disable default breadcrumbs by default
 
 ### Fixed
 
