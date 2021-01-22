@@ -4,8 +4,6 @@ Joplin Wanaka UI is a theme to adapt the UI of [Joplin's](https://joplinapp.org/
 
 > **Visit [Lake Wanaka](https://www.newzealand.com/int/lake-wanaka/) in New Zealand! :wink:**
 
-> **NOTE** - This theme works with all built-in color themes
-
 > :warning: **CAUTION** - Requires Joplin **v1.6.8** or newer
 
 ## Table of contents
@@ -23,6 +21,7 @@ Joplin Wanaka UI is a theme to adapt the UI of [Joplin's](https://joplinapp.org/
 
 This theme changes the following parts of the user interface.
 
+- Works with all built-in color themes
 - Colored tags
 - Cleaner note list including floating plus button to create new notes/to-dos
 - Floating editor toolbar at the bottom of the editor content

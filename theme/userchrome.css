@@ -230,30 +230,26 @@ div.resizableLayoutItem iframe {
  *  SIDEBAR
  *************************************************************************************************/
 
-.side-bar .list-item-container:hover {
-  background-color: var(--overlay-light1) !important;
-}
-
 /* folders */
 .folders > div:first-of-type > a {
   text-transform: uppercase !important;
 }
 
 /* synchronize area */
-.side-bar > div:last-of-type {
+.sidebar > div:last-of-type {
   background-color: var(--overlay-dark2) !important;
   text-align: center !important;
 }
 
 /* synchronize button */
-.side-bar > div:last-of-type > button {
+.sidebar > div:last-of-type > button {
   background-color: var(--overlay-dark2) !important;
   border: none !important;
 }
-.side-bar > div:last-of-type > button:hover {
+.sidebar > div:last-of-type > button:hover {
   background-color: var(--overlay-light1) !important;
 }
-.side-bar > div:last-of-type > button span {
+.sidebar > div:last-of-type > button span {
   color: var(--overlay-light5) !important;
   text-transform: uppercase !important;
 }
