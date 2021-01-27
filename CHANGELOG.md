@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Possibility to hide icons for internal links in viewer
+
 ### Fixed
 
 - Fixed sidebar (incl. sync button) styles

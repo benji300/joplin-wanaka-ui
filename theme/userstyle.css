@@ -46,6 +46,11 @@ body {
  *  CONTENT
  *************************************************************************************************/
 
+/* TWEAK: Show/hide icon for internal links */
+.fa-joplin {
+  display: none;
+}
+
 /* horizontal rule */
 hr {
   border-width: 1px !important;
