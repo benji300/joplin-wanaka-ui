@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Possibility to hide icons for internal links in viewer
+- Styling options for [embed search](https://github.com/ambrt/joplin-plugin-embed-search) plugin
 
 ### Fixed
 

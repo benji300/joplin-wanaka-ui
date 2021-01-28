@@ -112,3 +112,28 @@ nav.table-of-contents ul li ul li {
 nav.table-of-contents a {
   text-decoration: none !important;
 }
+
+/**************************************************************************************************
+ *  PLUGIN: EMBED SEARCH
+ *  https://github.com/ambrt/joplin-plugin-embed-search
+ *************************************************************************************************/
+
+.embed-search .flex-grid {
+  align-items: center;
+  padding-bottom: 5px !important;
+}
+.embed-search .flex-grid a {
+  text-decoration: none !important;
+}
+.embed-search .flex-grid .tick {
+  text-align: center;
+}
+.embed-search .flex-grid input {
+  cursor: pointer;
+}
+.embed-search .flex-grid .tick:empty:after {
+  content: "📄";
+}
+.embed-search .flex-grid .note {
+  margin: 0 !important;
+}
