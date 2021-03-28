@@ -1,4 +1,4 @@
-/* JOPLIN WANAKA UI - v0.4.0 */
+/* JOPLIN WANAKA UI - v0.5.0 */
 
 /**************************************************************************************************
  *  VARIABLES
@@ -461,7 +461,7 @@ button[title="Toggle editors"] {
   > div
   > div
   > div
-  > div[style="display: flex; flex: 1 1 0%;"]
+  > div[style^="display: flex; flex: 1 1 0%;"]
   > div
   > div:last-of-type {
   padding: 5px 0 !important;

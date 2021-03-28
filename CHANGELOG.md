@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- None
+
+## [0.5.0] - 2021-03-28
+
+> Tested with Joplin v1.7.x
+
 ### Added
 
 - Possibility to hide icons for internal links in viewer
