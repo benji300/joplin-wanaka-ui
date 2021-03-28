@@ -31,10 +31,10 @@ html {
  *  GLOBALS
  *************************************************************************************************/
 
-body {
-  font-family: Roboto;
-  line-height: 1.2em !important;
-}
+/* TWEAK: Show/hide icon for internal links */
+/*.fa-joplin {
+  display: none;
+}*/
 
 /* scrollbars */
 ::-webkit-scrollbar-thumb {
@@ -46,9 +46,16 @@ body {
  *  CONTENT
  *************************************************************************************************/
 
-/* TWEAK: Show/hide icon for internal links */
-.fa-joplin {
-  display: none;
+/* global font */
+body {
+  font-family: Roboto;
+  line-height: 1.2em !important;
+}
+
+/* code */
+code {
+  font-family: "Roboto Mono", Consolas, "Courier New", monospace;
+  font-size: small;
 }
 
 /* horizontal rule */
@@ -59,6 +66,30 @@ hr {
 /* strikethrough checked task list items (https://discourse.joplinapp.org/t/share-your-css/1730/189) */
 li.md-checkbox input[type="checkbox"]:checked + label {
   text-decoration: line-through rgba(0, 0, 0, 0.5);
+}
+
+/**************************************************************************************************
+ *  EMBED SEARCH PLUGIN
+ *************************************************************************************************/
+
+.embed-search > div > div {
+  align-items: center;
+  padding-bottom: 5px !important;
+}
+.embed-search a {
+  text-decoration: none !important;
+}
+.embed-search > div > div > div {
+  margin: 0 !important;
+}
+.embed-search > div > div > div:first {
+  text-align: center;
+}
+.embed-search input {
+  cursor: pointer;
+}
+.embed-search > div > div > div:empty:after {
+  content: "📄";
 }
 
 /**************************************************************************************************
@@ -111,29 +142,4 @@ nav.table-of-contents ul li ul li {
 }
 nav.table-of-contents a {
   text-decoration: none !important;
-}
-
-/**************************************************************************************************
- *  PLUGIN: EMBED SEARCH
- *  https://github.com/ambrt/joplin-plugin-embed-search
- *************************************************************************************************/
-
-.embed-search .flex-grid {
-  align-items: center;
-  padding-bottom: 5px !important;
-}
-.embed-search .flex-grid a {
-  text-decoration: none !important;
-}
-.embed-search .flex-grid .tick {
-  text-align: center;
-}
-.embed-search .flex-grid input {
-  cursor: pointer;
-}
-.embed-search .flex-grid .tick:empty:after {
-  content: "📄";
-}
-.embed-search .flex-grid .note {
-  margin: 0 !important;
 }

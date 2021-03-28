@@ -53,9 +53,9 @@ i.icon-notes {
 } */
 
 /* TWEAK: Show/hide "last changed" timestamp next to the note title */
-.rli-editor > div > div > div > div > div > span {
+/* .rli-editor > div > div > div > div > div > span {
   display: none !important;
-}
+} */
 
 /* TWEAK: Show/hide "Spell checker" button on note toolbar */
 .editor-toolbar a[title="Spell checker"] {
@@ -503,6 +503,7 @@ button[title="Toggle editors"] {
  *  CODE MIRROR
  *************************************************************************************************/
 
+/* Set header color */
 .cm-header {
   color: var(--primary) !important;
 }
@@ -520,8 +521,6 @@ button[title="Toggle editors"] {
   /* TEAK: Adjust width if you have lot of lines (ch = Relative to the width of the "0") */
   width: 3ch;
 }
-
-/* Real CodeMirror line numbers */
 .CodeMirror-gutters {
   background: none !important;
   border: none !important;
@@ -529,6 +528,76 @@ button[title="Toggle editors"] {
 .CodeMirror-linenumber {
   color: var(--icons) !important;
 }
+
+/* reduce visibility of: */
+/* strikethrough */
+.cm-strikethrough,
+/* Katex markers */
+.cm-katex-marker-open,
+.cm-katex-marker-close {
+  opacity: var(--opacity-0-5);
+}
+
+/* limit the max width of editor, and center */
+/* .CodeMirror-sizer {
+  margin-right: auto !important;
+  margin-left: auto !important;
+  max-width: 800px !important;
+} */
+
+/**************************************************************************************************
+ *  RICH MARKDOWN PLUGIN EXTENSIONS
+ *  The additional CSS option must be enabled!
+ *************************************************************************************************/
+
+/* monospace font */
+.cm-overlay.cm-rm-monospace {
+  font-family: "Roboto mono", Consolas, "Courier New", monospace !important;
+}
+
+/* reduce the size and visibility of the following markdown tokens: */
+/* header hash tags */
+.cm-header.cm-rm-header-token,
+/* italics (emph) */
+.cm-em.cm-rm-em-token,
+/* bold (strong) */
+.cm-strong.cm-rm-strong-token {
+  font-size: 0.9em;
+  opacity: var(--opacity-0-5);
+}
+
+/* reduce visibility of urls of links */
+.cm-url.cm-rm-image,
+.cm-url.cm-rm-link {
+  opacity: var(--opacity-0-5);
+}
+.cm-url.cm-rm-image:hover,
+.cm-url.cm-rm-link:hover {
+  opacity: 1;
+}
+
+/* strikeout and dim the text of a checked checkbox */
+span.cm-rm-checkbox.cm-property + span.cm-rm-checkbox ~ span.cm-rm-checkbox {
+  text-decoration: line-through;
+  opacity: var(--opacity-0-5);
+}
+/* Uncomment the below sections to include the checkbox itself  */
+span.cm-rm-checkbox.cm-property + span.cm-rm-checkbox {
+  text-decoration: line-through;
+  opacity: var(--opacity-0-5);
+}
+span.cm-rm-checkbox.cm-property {
+  /* text-decoration: line-through; */
+  opacity: var(--opacity-0-5);
+}
+
+/* inline images */
+/* .rich-markdown-resource {
+  border-radius: 5px;
+  box-shadow: 0 0 5px 0 var(--overlay-dark2);
+  margin: 5px;
+  padding: 5px;
+} */
 
 /**************************************************************************************************
  *  TINY MCE
